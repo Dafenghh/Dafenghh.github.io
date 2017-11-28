@@ -1,11 +1,12 @@
 ---
 title: 'POJ 3276 [Face The Right Way] 题解'
 comments: true
-date: 2017-11-28 20:22:37
 categories: ACM
 tags:
-- 区间处理
-- 反转
+  - 区间处理
+  - 反转
+abbrlink: '49886522'
+date: 2017-11-28 20:22:37
 ---
 
 ## 题目大意
