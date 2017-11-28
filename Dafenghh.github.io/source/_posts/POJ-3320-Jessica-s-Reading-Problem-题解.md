@@ -1,21 +1,23 @@
 ---
 title: 'POJ 3320 [Jessica''s Reading Problem] 题解'
 comments: true
-date: 2017-11-28 12:51:03
 categories: ACM
 tags:
-- 尺取法
-- hash
-
+  - 尺取法
+  - hash
+abbrlink: 6f199fb1
+date: 2017-11-28 12:51:03
 ---
 ## 题目大意
 给定一个大小为P的数组，取出一个子区间，要求这个子区间上的数能覆盖整个数组的数，求满足条件的子区间的最小长度。
 
 <!-- more -->
 
+
 ## 题目分析
 《挑战程序设计竞赛》P149例题，采用“尺取法”可以很快地做出这道题。
-![挑战程序设计竞赛]("/img/POJ3320_solution.jpg")
+
+![挑战程序设计竞赛](/img/POJ3320_solution.jpg)
 
 使用map来记录的时间复杂度为`O(P log P)`。
 
