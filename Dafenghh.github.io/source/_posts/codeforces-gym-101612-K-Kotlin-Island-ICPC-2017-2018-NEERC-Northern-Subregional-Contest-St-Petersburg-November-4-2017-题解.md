@@ -3,10 +3,11 @@ title: >-
   codeforces gym 101612 K [Kotlin Island] (ICPC 2017-2018 NEERC Northern
   Subregional Contest St Petersburg November 4 2017) 题解
 comments: true
-date: 2017-11-29 22:36:06
 categories: ACM
 tags:
-- brute force
+  - brute force
+abbrlink: f48dff26
+date: 2017-11-29 22:36:06
 ---
 
 ## 题目描述

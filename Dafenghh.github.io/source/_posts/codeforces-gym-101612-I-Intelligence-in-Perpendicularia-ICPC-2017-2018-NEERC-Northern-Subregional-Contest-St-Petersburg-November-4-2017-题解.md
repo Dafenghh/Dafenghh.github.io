@@ -3,10 +3,11 @@ title: >-
   codeforces gym 101612 I [Intelligence in Perpendicularia] (ICPC 2017-2018
   NEERC Northern Subregional Contest St Petersburg November 4 2017) 题解
 comments: true
-date: 2017-11-29 22:38:10
 categories: ACM
 tags:
-- math
+  - math
+abbrlink: 7ec55acf
+date: 2017-11-29 22:38:10
 ---
 
 ## 题目描述

@@ -3,12 +3,12 @@ title: >-
   codeforces gym 101612 C [Consonant Fencity] (ICPC 2017-2018 NEERC Northern
   Subregional Contest St Petersburg November 4 2017) 题解
 comments: true
-date: 2017-11-29 22:35:36
 categories: ACM
 tags:
-- brute force
-- 位运算
-
+  - brute force
+  - 位运算
+abbrlink: 9c682bc0
+date: 2017-11-29 22:35:36
 ---
 
 ## 题目描述
