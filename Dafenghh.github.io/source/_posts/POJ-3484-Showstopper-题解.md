@@ -1,12 +1,12 @@
 ---
 title: 'POJ 3484 [Showstopper] 题解'
 comments: true
-date: 2017-11-28 22:44:04
 categories: ACM
 tags:
-- binary search
-- 按行输入
-
+  - binary search
+  - 按行输入
+abbrlink: b9568341
+date: 2017-11-28 22:44:04
 ---
 
 ## 题目大意
