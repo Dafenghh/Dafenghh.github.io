@@ -3,11 +3,12 @@ title: >-
   codeforces gym 101612 H [Hidden Supervisors] (ICPC 2017-2018 NEERC Northern
   Subregional Contest St Petersburg November 4 2017) 题解
 comments: true
-date: 2017-11-29 22:38:43
 categories: ACM
 tags:
-- trees
-- greedy
+  - trees
+  - greedy
+abbrlink: 2cb42504
+date: 2017-11-29 22:38:43
 ---
 ## 题目描述
 gym 101612 H题
@@ -99,10 +100,10 @@ int main() {
     Match(1, 1);
     queue<int> que0;
     priority_queue<P> que1;//que0: matched que1: unmatched
-	for (auto i: G[0]) {
-		Match(i, i);
-	}
-	countUnmatchedNodesForAllTrees();
+    for (auto i: G[0]) {
+        Match(i, i);
+    }
+    countUnmatchedNodesForAllTrees();
     for (auto i: G[0]) {
         if (matched[i]) {
             que0.push(i);

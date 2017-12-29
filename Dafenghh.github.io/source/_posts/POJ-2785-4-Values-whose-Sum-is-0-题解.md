@@ -1,10 +1,11 @@
 ---
 title: 'POJ 2785 [4 Values whose Sum is 0] 题解'
 comments: true
-date: 2017-11-30 22:45:20
 categories: ACM
 tags:
-- binary search
+  - binary search
+abbrlink: 5396864a
+date: 2017-11-30 22:45:20
 ---
 ## 题目大意
 大小都为N的四个数组`A[], B[], C[], D[]`, 从每个数组中分别选出一个数，`a, b, c, d` , 使得 `a + b + c + d = 0 `，问有多少种选择方式。
@@ -30,19 +31,19 @@ int a[maxn], b[maxn], c[maxn], d[maxn];
 int ab[maxn * maxn], cd[maxn * maxn];
 ll ans = 0;
 int main() {
-	ios::sync_with_stdio(false);
-	cin.tie(0);
-	int n;
-	cin >> n;
-	for (int i = 0; i < n; i++) cin >> a[i] >> b[i] >> c[i] >> d[i];
-	for (int i = 0; i < n; i++)
-	for (int j = 0; j < n; j++)
-		ab[i * n + j] = a[i] + b[j], cd[i * n + j] = c[i] + d[j];
-	sort(cd, cd + n * n);
-	for (int i = 0; i < n * n; i++)
-		ans += upper_bound(cd, cd + n * n, -ab[i]) - lower_bound(cd, cd + n * n, -ab[i]);
-	cout << ans << endl;
-	
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++) cin >> a[i] >> b[i] >> c[i] >> d[i];
+    for (int i = 0; i < n; i++)
+    for (int j = 0; j < n; j++)
+        ab[i * n + j] = a[i] + b[j], cd[i * n + j] = c[i] + d[j];
+    sort(cd, cd + n * n);
+    for (int i = 0; i < n * n; i++)
+        ans += upper_bound(cd, cd + n * n, -ab[i]) - lower_bound(cd, cd + n * n, -ab[i]);
+    cout << ans << endl;
+    
 
 }
 
