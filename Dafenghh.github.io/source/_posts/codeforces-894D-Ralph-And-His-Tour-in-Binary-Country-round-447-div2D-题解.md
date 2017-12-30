@@ -4,7 +4,7 @@ comments: true
 categories: ACM
 tags:
   - trees
-  - data structure
+  - data structures
 abbrlink: 2d71363f
 date: 2017-11-26 09:56:29
 ---

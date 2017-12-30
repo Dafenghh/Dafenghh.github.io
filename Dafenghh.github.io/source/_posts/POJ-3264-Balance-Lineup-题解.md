@@ -4,7 +4,8 @@ comments: true
 date: 2017-12-29 20:56:34
 categories: ACM
 tags:
-- segmentTree
+  - segment tree
+  - trees
 ---
 # 题目大意
 长度为N的数组，Q次查询，查询区间[A, B]的最大值与最小值之差。
