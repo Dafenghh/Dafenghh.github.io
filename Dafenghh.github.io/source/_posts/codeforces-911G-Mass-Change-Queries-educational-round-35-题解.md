@@ -28,8 +28,6 @@ educational round的最后一题，本来以为非常难，看了[pannibal](http
 	
 	或者说，这个修改操作包含两个修改，(1) [l, +inf)区间的x变成y; (2) [r+1, +inf)区间的x变回x.
 	
-	
-
 2. 另外，修改的顺序也是很重要的。我们将所有修改按照点的标记位置存在vector里。见main函数代码: 
 ```
 vec[l].push_back(Change(t, x, y));
