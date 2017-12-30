@@ -1,12 +1,13 @@
 ---
 title: 'codeforces 343D [Water Tree] 题解'
 comments: true
-date: 2017-12-30 14:26:56
 categories: ACM
 tags:
   - trees
   - dfs and similar
   - data structures
+abbrlink: a28d78f2
+date: 2017-12-30 14:26:56
 ---
 # 题目大意
 给定一棵树，可以进行以下三种操作：
