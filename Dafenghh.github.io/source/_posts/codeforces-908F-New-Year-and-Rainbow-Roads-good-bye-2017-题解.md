@@ -1,10 +1,11 @@
 ---
 title: 'codeforces 908F [New Year and Rainbow Roads] (good bye 2017) 题解'
 comments: true
-date: 2017-12-30 15:05:48
 categories: ACM
 tags:
   - greedy
+abbrlink: '8234636'
+date: 2017-12-30 15:05:48
 ---
 # 题目大意
 给定一维直线上的N个点，每个点有一个颜色标记（红、绿、蓝），现在要连边，一条边的代价为两点距离。现求最小总代价，使红、绿点连通，并且蓝、绿点连通。

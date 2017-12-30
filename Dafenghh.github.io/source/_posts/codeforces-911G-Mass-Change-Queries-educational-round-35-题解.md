@@ -1,17 +1,20 @@
 ---
 title: 'codeforces 911G [Mass Change Queries] # educational round 35 题解'
 comments: true
-date: 2017-12-30 21:20:40
 categories: ACM
 tags:
   - data structures
   - segment tree
+abbrlink: '360e2773'
+date: 2017-12-30 21:20:40
 ---
 
 # 题目大意
 给定一个数组a，长度为n，q次操作，每次操作给定四个整数，l,r,x,y表示将[l, r]区间中的值为x元素全部变成y，输出最终数组。
 
 数据范围：`n, q <= 200000, a[i], x, y <= 100` 
+
+<!-- more -->
 
 # 题目分析
 
