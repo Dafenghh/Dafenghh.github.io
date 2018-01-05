@@ -1,11 +1,12 @@
 ---
 title: 'POJ 1990 [MooFest] 题解'
 comments: true
-date: 2017-12-31 00:23:57
 categories: ACM
 tags:
   - data structures
   - BIT
+abbrlink: a0a6f15
+date: 2017-12-31 00:23:57
 ---
 # 题目大意
 N头牛排成一排，现在给出它们的坐标x[i]和听觉阈值v[i]. 两头牛i和j之间谈话的音量为`max(v[i], v[j]) * dist(i, j)` dist表示两者距离。求所有N*(N-1)对牛谈话音量的总和。

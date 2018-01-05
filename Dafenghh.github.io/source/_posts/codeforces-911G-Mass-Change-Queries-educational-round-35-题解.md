@@ -5,6 +5,7 @@ categories: ACM
 tags:
   - data structures
   - segment tree
+  - scanline
 abbrlink: '360e2773'
 date: 2017-12-30 21:20:40
 ---
