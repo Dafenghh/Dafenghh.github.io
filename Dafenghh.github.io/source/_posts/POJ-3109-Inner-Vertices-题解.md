@@ -1,11 +1,12 @@
 ---
 title: 'POJ 3109 [Inner Vertices] 题解'
 comments: true
-date: 2018-01-05 16:17:54
 categories: ACM
 tags:
-- BIT
-- scanline
+  - BIT
+  - scanline
+abbrlink: c38b5f65
+date: 2018-01-05 16:17:54
 ---
 # 题目大意
 一个无限大的棋盘，给出N个点的坐标，初始时这些点上都放置着黑棋。其他所有点放置着白棋。若一个白棋的上下左右方向上都有黑棋，那么它会被替换成黑棋。求最终黑棋的数量。
