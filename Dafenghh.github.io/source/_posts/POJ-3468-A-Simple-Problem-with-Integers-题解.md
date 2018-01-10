@@ -1,12 +1,12 @@
 ---
 title: 'POJ 3468 [A Simple Problem with Integers] 题解'
 comments: true
-date: 2018-01-09 17:30:31
 categories: ACM
 tags:
   - BIT
   - data structures
-
+abbrlink: 8b465320
+date: 2018-01-09 17:30:31
 ---
 
 # 题目大意

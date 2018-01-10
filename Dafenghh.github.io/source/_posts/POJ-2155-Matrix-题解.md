@@ -1,10 +1,11 @@
 ---
 title: 'POJ 2155 [Matrix] 题解'
 comments: true
-date: 2018-01-09 22:15:40
 categories: ACM
 tags:
   - BIT
+abbrlink: 5eb8db9
+date: 2018-01-09 22:15:40
 ---
 # 题目大意
 一个N*N的布尔矩阵，初始值全为0，T次询问，两种操作：
