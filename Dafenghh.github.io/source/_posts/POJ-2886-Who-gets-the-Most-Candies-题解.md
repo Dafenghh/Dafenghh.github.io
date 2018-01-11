@@ -1,12 +1,12 @@
 ---
 title: 'POJ 2886 [Who gets the Most Candies] 题解'
 comments: true
-date: 2018-01-10 14:46:27
 categories: ACM
 tags:
   - BIT
   - data structures
-
+abbrlink: 63c20c7e
+date: 2018-01-10 14:46:27
 ---
 # 题目大意
 N个孩子围一圈玩游戏， 按顺时针从1到N编号，每个孩子手上有张牌，牌上有个非零数字。给定数字K，一开始第K个孩子走出圈。每个出圈的孩子的牌上的数字将决定下一个出圈孩子是谁。若此时出圈孩子的牌的数字为x，正则往顺时针方向数到第x个孩子，负则逆时针方向数到第|x|个孩子，即为下一个要走出圈的孩子。
