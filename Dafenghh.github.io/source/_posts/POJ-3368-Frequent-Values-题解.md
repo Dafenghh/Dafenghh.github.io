@@ -1,11 +1,12 @@
 ---
 title: 'POJ 3368 [Frequent Values] 题解'
 comments: true
-date: 2018-01-11 09:54:21
 categories: ACM
 tags:
   - data structures
   - segment tree
+abbrlink: c9635eac
+date: 2018-01-11 09:54:21
 ---
 # 题目大意
 给定一个长度为N的单调不下降的数组，M次询问，每次询问原数组区间[i, j]中，出现频数最多的数的频数。

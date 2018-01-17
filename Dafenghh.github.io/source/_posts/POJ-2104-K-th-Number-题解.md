@@ -1,14 +1,14 @@
 ---
 title: 'POJ 2104 [K-th Number] 题解'
 comments: true
-date: 2018-01-11 09:51:08
 categories: ACM
 tags:
   - segment tree
   - sqrt decomposition
   - 主席树
   - data structures
-
+abbrlink: 76b5095a
+date: 2018-01-11 09:51:08
 ---
 # 题目大意
 给定一个长度为n的数组，m次查询。每次查询给出三个数（i, j, k），表示要求原数组的区间[i, j]升序排列中的第k个数。
