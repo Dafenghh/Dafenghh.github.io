@@ -1,7 +1,6 @@
 ---
 title: 'POJ 1201 [Intervals] 题解'
 comments: true
-date: 2018-01-17 11:18:14
 categories: ACM
 tags:
   - greedy
@@ -9,6 +8,8 @@ tags:
   - data structures
   - graphs
   - 差分约束
+abbrlink: a568ae24
+date: 2018-01-17 11:18:14
 ---
 # 题目大意
 给定n个区间，现在要从每个区间$[a_i, b_i]$中取出$c_i$个数，所有被取出的数组成一个集合。求这个集合的最小size.

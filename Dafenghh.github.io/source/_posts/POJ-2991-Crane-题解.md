@@ -3,7 +3,7 @@ title: 'POJ 2991 [Crane] 题解'
 comments: true
 categories: ACM
 tags:
-  - segmentTree
+  - segment tree
   - geometry
   - math
 abbrlink: a9a98564
