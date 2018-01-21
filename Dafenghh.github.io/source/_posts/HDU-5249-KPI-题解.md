@@ -1,11 +1,12 @@
 ---
 title: 'HDU 5249 [KPI] 题解'
 comments: true
-date: 2018-01-17 15:59:57
 categories: ACM
 tags:
   - BIT
   - data structures
+abbrlink: a54ea176
+date: 2018-01-17 15:59:57
 ---
 # 题目大意
 n次操作，有3种操作的类型：入队、出队、查询队列中的中位数。
