@@ -3,12 +3,12 @@ title: >-
   codeforces gym 101630C [Connections] 2017-2018 ACM-ICPC, Northern Eurasia
   (Northeastern European Regional) Contest (NEERC 17) 题解
 comments: true
-date: 2018-01-23 19:01:49
 categories: ACM
 tags:
   - graphs
   - dfs and similar
-  
+abbrlink: a35a5595
+date: 2018-01-23 19:01:49
 ---
 # 题目大意
 给定一个强连通的有向图，n个点，m条边；要求，去掉m-2n条边，使剩下的图仍然强连通。
@@ -48,50 +48,50 @@ map<P, int> M;
 bool used[maxn];
 int index[maxn], cnt;
 int dfs(int v) {
-	index[v] = cnt++;
-	used[v] = true;
-	int bv = v, nbi = index[v];
-	for (auto i: G[v]) {
-		if (!used[i]) {
-			M[P(v,i)] = 1;
-			nbi = min(nbi, dfs(i));
-		}
-		else if (index[i] < index[bv]) bv = i;
-	}
-	if (index[bv] < nbi) {
-		M[P(v, bv)] = 1;
-	}
-	return min(nbi, index[bv]);
+    index[v] = cnt++;
+    used[v] = true;
+    int bv = v, nbi = index[v];
+    for (auto i: G[v]) {
+        if (!used[i]) {
+            M[P(v,i)] = 1;
+            nbi = min(nbi, dfs(i));
+        }
+        else if (index[i] < index[bv]) bv = i;
+    }
+    if (index[bv] < nbi) {
+        M[P(v, bv)] = 1;
+    }
+    return min(nbi, index[bv]);
 }
 int main() {
-	int T;	
-	scanf("%d", &T);
-	while (T--) {
-	  scanf("%d%d", &n, &m);
-	  M.clear();
-	  cnt = 0;
-	  memset(used, 0, sizeof(used));
-	  memset(index, 0, sizeof(index));
-	  for (int i = 1; i <= n; i++) G[i].clear();
-	  for (int i = 0; i < m; i++) {
-	  		int x,y;
-	  		scanf("%d%d", &x, &y);
-	  		G[x].push_back(y);
-	  		M[P(x,y)] = 0;
-	  }
-	  
-	  dfs(1);
-	  int tot = 0;
-	  for (auto i: M) {
-	  	if (!i.second) {
-	  		tot++;
-	  		printf("%d %d\n", i.first.first, i.first.second);
-	  		if (tot == m - 2 * n) break;
-	  	}
-	  }
-	  
-	  
-	}
+    int T;	
+    scanf("%d", &T);
+    while (T--) {
+      scanf("%d%d", &n, &m);
+      M.clear();
+      cnt = 0;
+      memset(used, 0, sizeof(used));
+      memset(index, 0, sizeof(index));
+      for (int i = 1; i <= n; i++) G[i].clear();
+      for (int i = 0; i < m; i++) {
+              int x,y;
+              scanf("%d%d", &x, &y);
+              G[x].push_back(y);
+              M[P(x,y)] = 0;
+      }
+      
+      dfs(1);
+      int tot = 0;
+      for (auto i: M) {
+          if (!i.second) {
+              tot++;
+              printf("%d %d\n", i.first.first, i.first.second);
+              if (tot == m - 2 * n) break;
+          }
+      }
+      
+      
+    }
 }
 
 ```
