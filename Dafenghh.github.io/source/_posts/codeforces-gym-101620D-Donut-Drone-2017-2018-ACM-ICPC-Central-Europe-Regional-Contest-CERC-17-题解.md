@@ -46,116 +46,116 @@ const int INF = 1234567890;
 int dat[4 * maxn][maxn], row, col , a[maxn][maxn], NY[maxn][maxn],circle[maxn],posi[maxn];
 
 int query(int y, int x1, int x2, int v = 0, int l = 0, int r = col) { // [l, r)
-	 if (x2 <= l || r <= x1) return y;
-	 if (x1 <= l && r <= x2) return dat[v][y];
-	 int mid = (l + r) >> 1, chl = v * 2 + 1, chr = v * 2 + 2;
-	 int LAns = query(y, x1, x2, chl, l, mid);
-	 return query(LAns, x1, x2, chr, mid, r);
+     if (x2 <= l || r <= x1) return y;
+     if (x1 <= l && r <= x2) return dat[v][y];
+     int mid = (l + r) >> 1, chl = v * 2 + 1, chr = v * 2 + 2;
+     int LAns = query(y, x1, x2, chl, l, mid);
+     return query(LAns, x1, x2, chr, mid, r);
 }
 
 void update(int x, int y, int val, int v = 0, int l = 0, int r = col) {
-	 if (x < l || x >= r) return;
-	 if (l + 1 == r) {
-			dat[v][y] = val;
-			return;
-	 }
-	 int mid = (l + r) >> 1, chl = v * 2 + 1, chr = v * 2 + 2;
-	 update(x, y, val, chl, l, mid);
-	 update(x, y, val, chr, mid, r);
-	 for (int i = 0; i < row; i++) dat[v][i] = dat[chr][dat[chl][i]];
+     if (x < l || x >= r) return;
+     if (l + 1 == r) {
+            dat[v][y] = val;
+            return;
+     }
+     int mid = (l + r) >> 1, chl = v * 2 + 1, chr = v * 2 + 2;
+     update(x, y, val, chl, l, mid);
+     update(x, y, val, chr, mid, r);
+     for (int i = 0; i < row; i++) dat[v][i] = dat[chr][dat[chl][i]];
 }
 
 void build(int v = 0, int l = 0, int r = col) {
-	if (l + 1 == r) {
-		for (int i = 0; i < row; i++) dat[v][i] = NY[l][i];
-		return;
-	}
-	int mid = (l + r) >> 1, chl = v * 2 + 1, chr = v * 2 + 2;
-	build(chl, l, mid);
-	build(chr, mid, r);
-	for (int i = 0; i < row; i++)
-		dat[v][i] = dat[chr][dat[chl][i]];
+    if (l + 1 == r) {
+        for (int i = 0; i < row; i++) dat[v][i] = NY[l][i];
+        return;
+    }
+    int mid = (l + r) >> 1, chl = v * 2 + 1, chr = v * 2 + 2;
+    build(chl, l, mid);
+    build(chr, mid, r);
+    for (int i = 0; i < row; i++)
+        dat[v][i] = dat[chr][dat[chl][i]];
 }
 int read(){
-	int v; char ch;
-	while (!isdigit(ch=getchar()));
-	v=ch-48;
-	while (isdigit(ch=getchar())) v=v*10+ch-48;
-	return v;
+    int v; char ch;
+    while (!isdigit(ch=getchar()));
+    v=ch-48;
+    while (isdigit(ch=getchar())) v=v*10+ch-48;
+    return v;
 }
 
 int getNY(int x, int y) {
-	int nx = (x + 1) % col, Max = -INF, res;
-	for (int dy = -1; dy <= 1; dy++){
-		int ny = (y + dy + row) % row;
-		if (a[nx][ny] > Max) {
-			Max = a[nx][ny];
-			res = ny;
-		}
-	}
-	return res;
+    int nx = (x + 1) % col, Max = -INF, res;
+    for (int dy = -1; dy <= 1; dy++){
+        int ny = (y + dy + row) % row;
+        if (a[nx][ny] > Max) {
+            Max = a[nx][ny];
+            res = ny;
+        }
+    }
+    return res;
 }
 
 int main() {
-	row = read(), col = read();
-	for (int i = 0; i < row; i++)
-		 for (int j = 0; j < col; j++) a[j][i] = read();
-	for (int i = 0; i < row; i++)
-		 for (int j = 0; j < col; j++) NY[j][i] = getNY(j, i);
-	 
+    row = read(), col = read();
+    for (int i = 0; i < row; i++)
+         for (int j = 0; j < col; j++) a[j][i] = read();
+    for (int i = 0; i < row; i++)
+         for (int j = 0; j < col; j++) NY[j][i] = getNY(j, i);
+     
 
-	build();
-	int m = read();
+    build();
+    int m = read();
 
-	int y = 0, x = 0;
-	while (m--) {
-		char s[10];
-		scanf("%s",s);
-		if (s[0] == 'm') {
-			int k = read();
-			if (k > col) {
-				if (x != 0) k-= col-x, y = query(y,x,col),x=0;
-				memset(posi, -1, sizeof(posi));
-				circle[0] = y;
-				posi[y] = 0;
-				int ci = k / col;
-				k -= ci * col;
-				for (int i = 1; i <= ci; i++)
-				{
-					circle[i] = y = query(y, 0, col);
-					if (posi[y] != -1) {
-						int len = i - posi[y];						
-						y = circle[posi[y] + (ci - posi[y]) % len];
-						break;
-					}
-					posi[y] = i;
-				}
-				
-				if (k > 0) y = query(y, 0, k);
-				x = k;
-			}
-			else {
-				for (int i = 0; i < k; i++){
-					y = NY[x][y];x = (x + 1) % col;
-				}
-			}
-			printf("%d %d\n", y + 1, x + 1);
-		}
-		else {
-			int cy = read() - 1, cx = read() - 1, val = read();
-			a[cx][cy] = val;
-			int px = (cx + col - 1) % col;
-			for (int dy = -1; dy <= 1; dy++)
-			{
-				int py = (cy + dy + row) % row;
-				int temp = getNY(px, py);
-				if (NY[px][py] != temp) {
-					NY[px][py] = temp;
-					update(px, py, temp);
-				}
-			}
-		}
-	}
+    int y = 0, x = 0;
+    while (m--) {
+        char s[10];
+        scanf("%s",s);
+        if (s[0] == 'm') {
+            int k = read();
+            if (k > col) {
+                if (x != 0) k-= col-x, y = query(y,x,col),x=0;
+                memset(posi, -1, sizeof(posi));
+                circle[0] = y;
+                posi[y] = 0;
+                int ci = k / col;
+                k -= ci * col;
+                for (int i = 1; i <= ci; i++)
+                {
+                    circle[i] = y = query(y, 0, col);
+                    if (posi[y] != -1) {
+                        int len = i - posi[y];						
+                        y = circle[posi[y] + (ci - posi[y]) % len];
+                        break;
+                    }
+                    posi[y] = i;
+                }
+                
+                if (k > 0) y = query(y, 0, k);
+                x = k;
+            }
+            else {
+                for (int i = 0; i < k; i++){
+                    y = NY[x][y];x = (x + 1) % col;
+                }
+            }
+            printf("%d %d\n", y + 1, x + 1);
+        }
+        else {
+            int cy = read() - 1, cx = read() - 1, val = read();
+            a[cx][cy] = val;
+            int px = (cx + col - 1) % col;
+            for (int dy = -1; dy <= 1; dy++)
+            {
+                int py = (cy + dy + row) % row;
+                int temp = getNY(px, py);
+                if (NY[px][py] != temp) {
+                    NY[px][py] = temp;
+                    update(px, py, temp);
+                }
+            }
+        }
+    }
 }
 
 ```
