@@ -1,12 +1,12 @@
 ---
 title: 'POJ 3470 [Walls] 题解'
 comments: true
-date: 2018-01-22 23:11:51
 categories: ACM
 tags:
   - segment tree
   - scanline
-  
+abbrlink: 7d2ff651
+date: 2018-01-22 23:11:51
 ---
 # 题目大意
 平面上有n条与坐标轴平行的互不相交的线段，代表墙；还有m个不在线段上的点，代表鸟。鸟会沿着坐标轴方向，飞向离它最近的墙，并撞上去。求每一面墙会有多少只鸟撞上来。

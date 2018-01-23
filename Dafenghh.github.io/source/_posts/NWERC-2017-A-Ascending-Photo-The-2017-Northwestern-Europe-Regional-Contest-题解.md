@@ -3,10 +3,11 @@ title: >-
   NWERC 2017 A [Ascending Photo] (The 2017 Northwestern Europe Regional Contest)
   题解
 comments: true
-date: 2018-01-22 23:08:38
-categories:
 tags:
   - dp
+abbrlink: 7c1f2f41
+date: 2018-01-22 23:08:38
+categories:
 ---
 # 题目大意
 
