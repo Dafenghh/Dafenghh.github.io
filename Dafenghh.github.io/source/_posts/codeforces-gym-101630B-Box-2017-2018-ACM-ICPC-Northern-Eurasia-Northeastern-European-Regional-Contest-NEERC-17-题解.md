@@ -3,11 +3,11 @@ title: >-
   codeforces gym 101630B [Box] 2017-2018 ACM-ICPC, Northern Eurasia
   (Northeastern European Regional) Contest (NEERC 17) 题解
 comments: true
-date: 2018-01-23 20:47:49
 categories: ACM
 tags:
   - math
-  
+abbrlink: 5f7aa68
+date: 2018-01-23 20:47:49
 ---
 # 题目大意
 给定一张`w*h`大小的纸片，要求裁剪出一个`a*b*c`的长方体的展开图，问是否可行。
