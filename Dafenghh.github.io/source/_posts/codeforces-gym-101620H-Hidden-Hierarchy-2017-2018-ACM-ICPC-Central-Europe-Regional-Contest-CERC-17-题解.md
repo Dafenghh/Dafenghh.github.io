@@ -3,11 +3,12 @@ title: >-
   codeforces gym 101620H [Hidden Hierarchy] 2017-2018 ACM-ICPC, Central Europe
   Regional Contest (CERC 17) 题解
 comments: true
-date: 2018-01-26 13:39:40
 categories: ACM
 tags:
   - tree
   - dfs and similar
+abbrlink: 1dd196f0
+date: 2018-01-26 13:39:40
 ---
 # 题目大意
 给出n个文件的路径和大小，然后要像Windows资源管理器的侧边栏那样输出文件夹的分层结构。当一个文件夹里的所有子文件夹大小都不超过t时，它会折叠起来。

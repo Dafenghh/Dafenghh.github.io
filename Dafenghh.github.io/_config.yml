@@ -5,8 +5,10 @@
 # Site
 title: Dafenghh's Blog
 subtitle: To Be Top Coder
-description: Turn what you want to do into<br />a habit like brushing your teeth.
+description: Turn what you want to do into a habit like brushing your teeth.
+keywords: Coding Learning Practicing
 author: Dafenghh
+email: xudafeng88@qq.com
 language: zh-Hans
 timezone:
 
@@ -75,11 +77,35 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: indigo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: 
   type: git
-  repository: https://github.com/Dafenghh/Dafenghh.github.io.git
+  repository: ssh:git@github.com:Dafenghh/Dafenghh.github.io.git
   branch: master
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 0
+
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: true
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true

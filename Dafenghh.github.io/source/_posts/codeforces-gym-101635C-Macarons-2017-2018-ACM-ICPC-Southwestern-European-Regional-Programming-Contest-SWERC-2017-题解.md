@@ -3,6 +3,7 @@ title: >-
   codeforces gym 101635C [Macarons] 2017-2018 ACM-ICPC, Southwestern European
   Regional Programming Contest (SWERC 2017) 题解
 comments: true
+abbrlink: 9049154c
 date: 2018-01-26 15:22:09
 categories:
 tags:

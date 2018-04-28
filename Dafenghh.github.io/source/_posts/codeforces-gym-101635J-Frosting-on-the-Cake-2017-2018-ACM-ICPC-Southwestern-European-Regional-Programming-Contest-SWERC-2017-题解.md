@@ -3,10 +3,11 @@ title: >-
   codeforces gym 101635J [Frosting on the Cake] 2017-2018 ACM-ICPC, Southwestern
   European Regional Programming Contest (SWERC 2017) 题解
 comments: true
-date: 2018-01-26 14:32:45
 categories: ACM
 tags:
   - implementation
+abbrlink: 8e378f9
+date: 2018-01-26 14:32:45
 ---
 
 # 题目大意

@@ -3,11 +3,11 @@ title: >-
   codeforces gym 101620L [Lunar Landscape] 2017-2018 ACM-ICPC, Central Europe
   Regional Contest (CERC 17) 题解
 comments: true
-date: 2018-01-26 13:40:19
 categories: ACM
 tags:
   - math
-
+abbrlink: '96671495'
+date: 2018-01-26 13:40:19
 ---
 
 # 题目大意

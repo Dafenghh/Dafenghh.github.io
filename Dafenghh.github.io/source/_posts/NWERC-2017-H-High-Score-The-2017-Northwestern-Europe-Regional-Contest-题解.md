@@ -1,6 +1,7 @@
 ---
 title: 'NWERC 2017 H [High Score] (The 2017 Northwestern Europe Regional Contest) 题解'
 comments: true
+abbrlink: 54cee541
 date: 2018-01-24 10:34:18
 categories:
 tags:
