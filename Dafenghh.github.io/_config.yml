@@ -9,7 +9,7 @@ description: Turn what you want to do into a habit like brushing your teeth.
 keywords: Coding Learning Practicing
 author: Dafenghh
 email: xudafeng88@qq.com
-language: zh-Hans
+language: en
 timezone:
 
 # URL
@@ -83,7 +83,7 @@ theme: indigo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: 
   type: git
-  repository: ssh:git@github.com:Dafenghh/Dafenghh.github.io.git
+  repository: git@github.com:Dafenghh/Dafenghh.github.io.git
   branch: master
 
 feed:
