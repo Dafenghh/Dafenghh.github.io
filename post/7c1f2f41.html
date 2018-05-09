@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>NWERC 2017 A [Ascending Photo] (The 2017 Northwestern Europe Regional Contest) 题解 | Dafenghh&#39;s Blog | To Be Top Coder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="dp">
+    <meta name="description" content="题目大意题目链接 给定一个序列，将它切割成若干段，使得对每一段进行移动之后可以重排成非严格升序。求最少的切割数。">
+<meta name="keywords" content="dp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NWERC 2017 A [Ascending Photo] (The 2017 Northwestern Europe Regional Contest) 题解">
+<meta property="og:url" content="http://dafenghh.github.io/post/7c1f2f41.html">
+<meta property="og:site_name" content="Dafenghh&#39;s Blog">
+<meta property="og:description" content="题目大意题目链接 给定一个序列，将它切割成若干段，使得对每一段进行移动之后可以重排成非严格升序。求最少的切割数。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-02T06:38:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NWERC 2017 A [Ascending Photo] (The 2017 Northwestern Europe Regional Contest) 题解">
+<meta name="twitter:description" content="题目大意题目链接 给定一个序列，将它切割成若干段，使得对每一段进行移动之后可以重排成非严格升序。求最少的切割数。">
+    
+        <link rel="alternate" type="application/atom+xml" title="Dafenghh&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/dafeng.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Dafenghh</h5>
+          <a href="mailto:xudafeng88@qq.com" title="xudafeng88@qq.com" class="mail">xudafeng88@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/dafenghh" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">NWERC 2017 A [Ascending Photo] (The 2017 Northwestern Europe Regional Contest) 题解</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">NWERC 2017 A [Ascending Photo] (The 2017 Northwestern Europe Regional Contest) 题解</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-22T15:08:38.000Z" itemprop="datePublished" class="page-time">
+  2018-01-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#题目大意"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目大意</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#题目分析"><span class="post-toc-number">2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#source-code"><span class="post-toc-number">3.</span> <span class="post-toc-text">source code</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-NWERC-2017-A-Ascending-Photo-The-2017-Northwestern-Europe-Regional-Contest-题解"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">NWERC 2017 A [Ascending Photo] (The 2017 Northwestern Europe Regional Contest) 题解</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-01-22 23:08:38" datetime="2018-01-22T15:08:38.000Z"  itemprop="datePublished">2018-01-22</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h1><p><a href="https://open.kattis.com/contests/nwerc17open/problems/ascendingphoto" target="_blank" rel="noopener">题目链接</a></p>
+<p>给定一个序列，将它切割成若干段，使得对每一段进行移动之后可以重排成非严格升序。求最少的切割数。</p>
+<a id="more"></a>
+<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><p>（集训的时候就差DP这步没想出来。）</p>
+<p>首先先将相邻的相同元素合并，并进行离散化（不影响答案）。</p>
+<p>然后现在将数组的每一个元素都切开（即切n-1下），比如1|2|3|0|4</p>
+<p>于是问题可以转化为，这n-1块“挡板”最多有多少块可以去掉，如果为s，那么最终答案就是n-1-s.</p>
+<p>在上面的例子中，唯一能够去掉的挡板是(2,3), 即变成1|2 3|0|4</p>
+<p>很显然，挡板能够去掉首先要满足，左右两个元素相差1.</p>
+<p>另外，假如有多块(2,3)挡板，比如对于1|2|3|4|2|3</p>
+<p>(2,3)的挡板只能去掉其中一块（不然装不回来）。所以，我们可以先将所有值出现的位置保存到vector中，然后从小到大考虑值，每两个相邻的值应该去掉哪一块挡板（有可能去不掉）。</p>
+<p>另外，如果去掉前面的(2,3)挡板，这时候会发现，紧接着后面的(3,4)挡板就去不了了。</p>
+<p>否则会变成：1|2 3 4|2|3</p>
+<p>可以看到最右边的3落下了。</p>
+<p>所以可以看到，去掉一个挡板有可能会产生一个冲突位置。具体地说，如果存在连续序列(a,a+1,a+2), 并且a+1在数组中不唯一，那么去掉(a,a+1)挡板将会导致(a+1,a+2）的挡板无法去除。</p>
+<p>用<code>dp[i]</code>表示去除值(0,1)到值(i,i+1)的所有可去除的挡板数量。</p>
+<p>注意到，<code>dp[i]</code>的值与每一步去除哪一块可选挡板有关，所以要加多一维。<code>dp[i][j]</code>的j表示，去除值(i,i+1)的挡板时，考虑的是位置(j,j+1)</p>
+<p>即首先i和j有条件，<code>h[j] = i, h[j+1] = i+1</code></p>
+<p><code>dp[i][j] = max(dp[i-1][j&#39;] + （j是不是j&#39;产生的冲突位置?0:1）)</code></p>
+<p>“j是不是j’产生的冲突位置” 等价于<code>j = j&#39; + 1 &amp;&amp; h[j]不唯一</code></p>
+<p>从这个条件可以看出，对于一个j’，最多产生一个冲突位置，j’+1(当h[j’+1]唯一就不是冲突位置）。</p>
+<p>对于一个j，只可能是一个位置j’ = j - 1的冲突位置。（条件*）</p>
+<p>如果我们把dp[i]看成一张表，那么最后我们求的就是dp[n]的最大值。</p>
+<p>观察转移方程，从dp[i]向dp[i+1]转移的时候，求max的是dp[i]这张表的所有元素，但其中有些元素加了1（条件j不是j’的冲突位置）。</p>
+<p>所以，我们只需保存这张表最大的那些值就行了。比如某个dp[i]={1,2,3,4,5,5,5}, 我们只需要保存{5,5,5}就行，因为前面的数，比如4，加上1也才是5，并不会更优。</p>
+<p>dp[i+1]的值有可能是5，也有可能是6，要看三个5之中，有没有一个5对应的冲突位置不是j，这个5就能加上1，变成6.</p>
+<p>回顾条件*，当我们保存了两个dp值最大的j’对应的冲突位置时，那么求 <code>dp[i][j]</code> 就能一定找到一个不冲突的位置，然后累计加上1.</p>
+<p>所以，每一步dp求出的表中，只需要保存最大两个值以及它们对应的冲突位置即可，下面代码，用best[0]和best[1]保存最大两个值以及对应的冲突位置。</p>
+<h1 id="source-code"><a href="#source-code" class="headerlink" title="source code"></a>source code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">()</span></span>&#123;</span><br><span class="line">true<span class="keyword">char</span> ch; <span class="keyword">int</span> v=<span class="number">0</span>,f=<span class="number">0</span>;</span><br><span class="line">true<span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch=getchar())) <span class="keyword">if</span> (ch==<span class="string">'-'</span>) <span class="keyword">break</span>;</span><br><span class="line">true<span class="keyword">if</span> (ch==<span class="string">'-'</span>) f=<span class="number">1</span>;<span class="keyword">else</span> v=ch<span class="number">-48</span>;</span><br><span class="line">true<span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch=getchar())) v=v*<span class="number">10</span>+ch<span class="number">-48</span>;</span><br><span class="line">true<span class="keyword">return</span> f?-v:v;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; P;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000020</span>;</span><br><span class="line"><span class="keyword">int</span> b[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; H;</span><br><span class="line">    <span class="keyword">int</span> n = get();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = get();</span><br><span class="line">        <span class="keyword">if</span> (H.empty() || H.back() != x) H.push_back(x);</span><br><span class="line">    &#125;</span><br><span class="line">    n = (<span class="keyword">int</span>)H.size();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) b[i] = H[i];</span><br><span class="line">    sort(b, b + n);</span><br><span class="line">    <span class="keyword">int</span> sz = unique(b, b + n) - b;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; posi(sz);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) H[i] = lower_bound(b, b + sz, H[i]) - b, posi[H[i]].push_back(i);</span><br><span class="line">    P best[<span class="number">2</span>] = &#123;P(<span class="number">0</span>, n), P(<span class="number">0</span>, n)&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> h = <span class="number">0</span>; h &lt; sz - <span class="number">1</span>; h++) &#123;</span><br><span class="line">        P nbest[<span class="number">2</span>] = &#123;best[<span class="number">0</span>], best[<span class="number">1</span>]&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; posi[h].size(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> p = posi[h][i];</span><br><span class="line">            <span class="keyword">if</span> (p == n - <span class="number">1</span> || H[p] + <span class="number">1</span> != H[p + <span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="function">P <span class="title">s</span><span class="params">(<span class="number">0</span>, n)</span></span>;</span><br><span class="line">            <span class="keyword">if</span> (p != best[<span class="number">0</span>].second) s = best[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">else</span> s = best[<span class="number">1</span>];</span><br><span class="line">            s.first++, s.second = p + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (posi[h + <span class="number">1</span>].size() == <span class="number">1</span>) s.second = n;</span><br><span class="line">            <span class="keyword">if</span> (s &gt; nbest[<span class="number">0</span>]) nbest[<span class="number">1</span>] = nbest[<span class="number">0</span>], nbest[<span class="number">0</span>] = s;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (s &gt; nbest[<span class="number">1</span>]) nbest[<span class="number">1</span>] = s;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        best[<span class="number">0</span>] = nbest[<span class="number">0</span>], best[<span class="number">1</span>] = nbest[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, n - <span class="number">1</span> - best[<span class="number">0</span>].first);    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-05-02T06:38:14.000Z" itemprop="dateUpdated">2018-05-02 14:38:14</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://dafenghh.github.io">
+            <img src="/img/dafeng.jpg" alt="Dafenghh">
+            Dafenghh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/">dp</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://dafenghh.github.io/post/7c1f2f41.html&title=《NWERC 2017 A [Ascending Photo] (The 2017 Northwestern Europe Regional Contest) 题解》 — Dafenghh's Blog&pic=http://dafenghh.github.io/img/dafeng.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dafenghh.github.io/post/7c1f2f41.html&title=《NWERC 2017 A [Ascending Photo] (The 2017 Northwestern Europe Regional Contest) 题解》 — Dafenghh's Blog&source=题目大意题目链接
+给定一个序列，将它切割成若干段，使得对每一段进行移动之后可以重排成非严格升序。求最少的切割数。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://dafenghh.github.io/post/7c1f2f41.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NWERC 2017 A [Ascending Photo] (The 2017 Northwestern Europe Regional Contest) 题解》 — Dafenghh's Blog&url=http://dafenghh.github.io/post/7c1f2f41.html&via=http://dafenghh.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://dafenghh.github.io/post/7c1f2f41.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/post/7d2ff651.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">POJ 3470 [Walls] 题解</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/post/a74fadaa.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">codeforces gym 101620D [Donut Drone] 2017-2018 ACM-ICPC, Central Europe Regional Contest (CERC 17) 题解</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "8QX43Q8DoVC4wBF3qEXmx1ue-gzGzoHsz",
+            appKey: "waVFgUV7PtULmRX6XPfFarqo",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Dafenghh &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://dafenghh.github.io/post/7c1f2f41.html&title=《NWERC 2017 A [Ascending Photo] (The 2017 Northwestern Europe Regional Contest) 题解》 — Dafenghh's Blog&pic=http://dafenghh.github.io/img/dafeng.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dafenghh.github.io/post/7c1f2f41.html&title=《NWERC 2017 A [Ascending Photo] (The 2017 Northwestern Europe Regional Contest) 题解》 — Dafenghh's Blog&source=题目大意题目链接
+给定一个序列，将它切割成若干段，使得对每一段进行移动之后可以重排成非严格升序。求最少的切割数。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://dafenghh.github.io/post/7c1f2f41.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NWERC 2017 A [Ascending Photo] (The 2017 Northwestern Europe Regional Contest) 题解》 — Dafenghh's Blog&url=http://dafenghh.github.io/post/7c1f2f41.html&via=http://dafenghh.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://dafenghh.github.io/post/7c1f2f41.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://dafenghh.github.io/post/7c1f2f41.html" alt="微信分享二维码">
+</div>
+
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Pending....';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Reading....';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

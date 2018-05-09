@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>2018.04.22 Kharagpur Regional 2017 集训总结 | Dafenghh&#39;s Blog | To Be Top Coder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Summary">
+    <meta name="description" content="Summary赛中通过3题，FDK.  F是暴力水题，D和K一共7记罚时，做得不好。D的错误是考虑错了复杂度，所以超时，加上输出%lld写成%d（经典错误）。K的错误是思考不谨慎，连边时加了一个多余的判断条件。 赛后没把H想出来。已经想得差不多，不过看错数据范围。一直以为要O(n^2)算法，其实是O(n^3). 要是看仔细点说不定就能想出来。（经典DP套路，请把训练指南的DP章节刷一遍，锻炼思维！">
+<meta name="keywords" content="Summary">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018.04.22 Kharagpur Regional 2017 集训总结">
+<meta property="og:url" content="http://dafenghh.github.io/post/9ffddd26.html">
+<meta property="og:site_name" content="Dafenghh&#39;s Blog">
+<meta property="og:description" content="Summary赛中通过3题，FDK.  F是暴力水题，D和K一共7记罚时，做得不好。D的错误是考虑错了复杂度，所以超时，加上输出%lld写成%d（经典错误）。K的错误是思考不谨慎，连边时加了一个多余的判断条件。 赛后没把H想出来。已经想得差不多，不过看错数据范围。一直以为要O(n^2)算法，其实是O(n^3). 要是看仔细点说不定就能想出来。（经典DP套路，请把训练指南的DP章节刷一遍，锻炼思维！">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-09T13:47:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2018.04.22 Kharagpur Regional 2017 集训总结">
+<meta name="twitter:description" content="Summary赛中通过3题，FDK.  F是暴力水题，D和K一共7记罚时，做得不好。D的错误是考虑错了复杂度，所以超时，加上输出%lld写成%d（经典错误）。K的错误是思考不谨慎，连边时加了一个多余的判断条件。 赛后没把H想出来。已经想得差不多，不过看错数据范围。一直以为要O(n^2)算法，其实是O(n^3). 要是看仔细点说不定就能想出来。（经典DP套路，请把训练指南的DP章节刷一遍，锻炼思维！">
+    
+        <link rel="alternate" type="application/atom+xml" title="Dafenghh&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/dafeng.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Dafenghh</h5>
+          <a href="mailto:xudafeng88@qq.com" title="xudafeng88@qq.com" class="mail">xudafeng88@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/dafenghh" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">2018.04.22 Kharagpur Regional 2017 集训总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">2018.04.22 Kharagpur Regional 2017 集训总结</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-04-29T12:13:01.000Z" itemprop="datePublished" class="page-time">
+  2018-04-29
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ACM/">ACM</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Summary"><span class="post-toc-number">1.</span> <span class="post-toc-text">Summary</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#A-Science-Fair"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">A Science Fair</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目大意"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">题目大意</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#solution"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">solution</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#B-Black-Discs"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">B Black Discs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#C-Uniform-Strings"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">C Uniform Strings</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#D-SAD-Queries"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">D SAD Queries</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#E-Chef-and-XOR-Queries"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">E Chef and XOR Queries</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#F-Taxi-Making-Sharp-Turns"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">F Taxi Making Sharp Turns</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#G-Spam-Classification-Using-Neural-Net"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">G Spam Classification Using Neural Net</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#H-Non-Overlapping-Segments"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">H Non Overlapping Segments</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#I-Spanning-Tree"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">I Spanning Tree</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#J-Generating-A-Permutation"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">J Generating A Permutation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目大意-1"><span class="post-toc-number">1.10.1.</span> <span class="post-toc-text">题目大意</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#solution-1"><span class="post-toc-number">1.10.2.</span> <span class="post-toc-text">solution</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#K-Number-Game"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">K Number Game</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-2018-04-22-Kharagpur-Regional-2017-集训总结"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">2018.04.22 Kharagpur Regional 2017 集训总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-04-29 20:13:01" datetime="2018-04-29T12:13:01.000Z"  itemprop="datePublished">2018-04-29</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ACM/">ACM</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>赛中通过3题，FDK.  F是暴力水题，D和K一共7记罚时，做得不好。D的错误是考虑错了复杂度，所以超时，加上输出%lld写成%d（经典错误）。K的错误是思考不谨慎，连边时加了一个多余的判断条件。</p>
+<p>赛后没把H想出来。已经想得差不多，不过看错数据范围。一直以为要O(n^2)算法，其实是O(n^3). 要是看仔细点说不定就能想出来。（经典DP套路，请把训练指南的DP章节刷一遍，锻炼思维！）</p>
+<p>赛后补了AHJ。还差EIB。加油，补完！</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> A</li>
+<li style="list-style: none"><input type="checkbox" checked> J</li>
+<li style="list-style: none"><input type="checkbox"> B</li>
+<li style="list-style: none"><input type="checkbox"> E</li>
+<li style="list-style: none"><input type="checkbox"> I</li>
+</ul>
+<a id="more"></a>
+<h2 id="A-Science-Fair"><a href="#A-Science-Fair" class="headerlink" title="A Science Fair"></a>A Science Fair</h2><h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>有N个学生，住在不同的地方。现在学校要选学生去参加科技节活动。每个学生被选去的概率的百分数等于他们的百分制成绩。</p>
+<p>大巴在S处出发，先去接送学校选去的学生，然后开到终点F。由于学生太过活跃，当大巴经过了他们家时，他们就算没被学校选中也会强行上车。每个学生有一个talkativeness，一次旅途的talkativeness等于所有上了车的学生的talkativeness的乘积。一次旅途的cost定义如下：</p>
+<p> cost(Trip) = Length(Trip) + (Talkativeness(Trip) % (1e9+7）)</p>
+<p> 司机会选择一条使cost最小的路线行驶。问cost的期望。</p>
+<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>扩展版旅行商问题。<br>关键是先重构图。压缩至只有S，F跟学生所在点。而这些点间的边权应该定义为原图中不经过别的学生的最短路长度。用$n^2$次dijkstra重构图完成后，就是一个旅行商问题了。之后状态压缩DP解决。</p>
+<p><code>dp1[x][i]</code>表示当前走到第i个点，访问过的点集为x的最小cost。<br><code>dp2[x]</code>表示访问学生集合为x以及x的超集的最小cost。这就是最终答案了。</p>
+<p>见<a href="a5930d20.html">Science Fair题解</a></p>
+<h2 id="B-Black-Discs"><a href="#B-Black-Discs" class="headerlink" title="B Black Discs"></a>B Black Discs</h2><h2 id="C-Uniform-Strings"><a href="#C-Uniform-Strings" class="headerlink" title="C Uniform Strings"></a>C Uniform Strings</h2><h2 id="D-SAD-Queries"><a href="#D-SAD-Queries" class="headerlink" title="D SAD Queries"></a>D SAD Queries</h2><h2 id="E-Chef-and-XOR-Queries"><a href="#E-Chef-and-XOR-Queries" class="headerlink" title="E Chef and XOR Queries"></a>E Chef and XOR Queries</h2><h2 id="F-Taxi-Making-Sharp-Turns"><a href="#F-Taxi-Making-Sharp-Turns" class="headerlink" title="F Taxi Making Sharp Turns"></a>F Taxi Making Sharp Turns</h2><h2 id="G-Spam-Classification-Using-Neural-Net"><a href="#G-Spam-Classification-Using-Neural-Net" class="headerlink" title="G Spam Classification Using Neural Net"></a>G Spam Classification Using Neural Net</h2><h2 id="H-Non-Overlapping-Segments"><a href="#H-Non-Overlapping-Segments" class="headerlink" title="H Non Overlapping Segments"></a>H Non Overlapping Segments</h2><h2 id="I-Spanning-Tree"><a href="#I-Spanning-Tree" class="headerlink" title="I Spanning Tree"></a>I Spanning Tree</h2><h2 id="J-Generating-A-Permutation"><a href="#J-Generating-A-Permutation" class="headerlink" title="J Generating A Permutation"></a>J Generating A Permutation</h2><h3 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a>题目大意</h3><p>对一个排列P，[p1, p2, …, pN-1, pN], 定义 f(P) = max(p1, p2) + max(p2, p3) + … + max(pN-1, pN)</p>
+<p>给出N，K。构造排列P， 使f(P) = K. 如果不存在，就输出-1.</p>
+<h3 id="solution-1"><a href="#solution-1" class="headerlink" title="solution"></a>solution</h3><p>f(P)的值是N-1个数的和。而原排列中的数，最多贡献两次答案。</p>
+<p>考虑排列是正序时，f(P)取到最小值，为2+3+…+N。也即2到N的数，每个数贡献1次。<br>最大值应该是在最大的那些数都贡献2次时取到。</p>
+<p>怎么让最大那个数贡献2次？只需要不把它放两端就可以了。</p>
+<p>另外注意到，一个大的数a多贡献一次的同时，就会剥夺另外一个较小的数b的贡献机会，这时候就会使答案增加a-b.</p>
+<p>所以这道题的构造方法就是，设a为下一个贡献多一次的数，b为下一个被剥夺贡献机会的数。考虑当前的和，如果加上b-a比答案大，我们就让b大一些，直到满足条件。然后把刚刚考虑过的b依次append到答案数组，再append a就行。</p>
+<p>见<a href="75299267.html">Generating A Permutation题解</a></p>
+<h2 id="K-Number-Game"><a href="#K-Number-Game" class="headerlink" title="K Number Game"></a>K Number Game</h2>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-05-09T13:47:52.000Z" itemprop="dateUpdated">2018-05-09 21:47:52</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://dafenghh.github.io">
+            <img src="/img/dafeng.jpg" alt="Dafenghh">
+            Dafenghh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Summary/">Summary</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://dafenghh.github.io/post/9ffddd26.html&title=《2018.04.22 Kharagpur Regional 2017 集训总结》 — Dafenghh's Blog&pic=http://dafenghh.github.io/img/dafeng.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dafenghh.github.io/post/9ffddd26.html&title=《2018.04.22 Kharagpur Regional 2017 集训总结》 — Dafenghh's Blog&source=Summary赛中通过3题，FDK.  F是暴力水题，D和K一共7记罚时，做得不好。D的错误是考虑错了复杂度，所以超时，加上输出%lld写成%d（经典错误..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://dafenghh.github.io/post/9ffddd26.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018.04.22 Kharagpur Regional 2017 集训总结》 — Dafenghh's Blog&url=http://dafenghh.github.io/post/9ffddd26.html&via=http://dafenghh.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://dafenghh.github.io/post/9ffddd26.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/post/af1c4a82.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Codeforces Educational Codeforces Round 43 Summary</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/post/9049154c.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">codeforces gym 101635C [Macarons] 2017-2018 ACM-ICPC, Southwestern European Regional Programming Contest (SWERC 2017) 题解</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "8QX43Q8DoVC4wBF3qEXmx1ue-gzGzoHsz",
+            appKey: "waVFgUV7PtULmRX6XPfFarqo",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Dafenghh &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://dafenghh.github.io/post/9ffddd26.html&title=《2018.04.22 Kharagpur Regional 2017 集训总结》 — Dafenghh's Blog&pic=http://dafenghh.github.io/img/dafeng.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dafenghh.github.io/post/9ffddd26.html&title=《2018.04.22 Kharagpur Regional 2017 集训总结》 — Dafenghh's Blog&source=Summary赛中通过3题，FDK.  F是暴力水题，D和K一共7记罚时，做得不好。D的错误是考虑错了复杂度，所以超时，加上输出%lld写成%d（经典错误..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://dafenghh.github.io/post/9ffddd26.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2018.04.22 Kharagpur Regional 2017 集训总结》 — Dafenghh's Blog&url=http://dafenghh.github.io/post/9ffddd26.html&via=http://dafenghh.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://dafenghh.github.io/post/9ffddd26.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://dafenghh.github.io/post/9ffddd26.html" alt="微信分享二维码">
+</div>
+
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Pending....';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Reading....';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

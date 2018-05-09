@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>POJ 2104 [K-th Number] 题解 | Dafenghh&#39;s Blog | To Be Top Coder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="data structures,segment tree,sqrt decomposition,主席树">
+    <meta name="description" content="题目大意给定一个长度为n的数组，m次查询。每次查询给出三个数（i, j, k），表示要求原数组的区间[i, j]升序排列中的第k个数。">
+<meta name="keywords" content="data structures,segment tree,sqrt decomposition,主席树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="POJ 2104 [K-th Number] 题解">
+<meta property="og:url" content="http://dafenghh.github.io/post/76b5095a.html">
+<meta property="og:site_name" content="Dafenghh&#39;s Blog">
+<meta property="og:description" content="题目大意给定一个长度为n的数组，m次查询。每次查询给出三个数（i, j, k），表示要求原数组的区间[i, j]升序排列中的第k个数。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-05-02T06:38:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="POJ 2104 [K-th Number] 题解">
+<meta name="twitter:description" content="题目大意给定一个长度为n的数组，m次查询。每次查询给出三个数（i, j, k），表示要求原数组的区间[i, j]升序排列中的第k个数。">
+    
+        <link rel="alternate" type="application/atom+xml" title="Dafenghh&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/dafeng.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Dafenghh</h5>
+          <a href="mailto:xudafeng88@qq.com" title="xudafeng88@qq.com" class="mail">xudafeng88@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/dafenghh" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">POJ 2104 [K-th Number] 题解</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">POJ 2104 [K-th Number] 题解</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-11T01:51:08.000Z" itemprop="datePublished" class="page-time">
+  2018-01-11
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ACM/">ACM</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#题目大意"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目大意</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#题目分析"><span class="post-toc-number">2.</span> <span class="post-toc-text">题目分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#solution-1-分块"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">solution 1 (分块)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#solution-2-归并树"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">solution 2 (归并树)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#solution-3-主席树"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">solution 3 (主席树)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#source-code"><span class="post-toc-number">3.</span> <span class="post-toc-text">source code</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#solution-1-分块-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">solution 1 (分块)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#solution-2-归并树-1"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">solution 2 (归并树)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#solution-3-主席树-1"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">solution 3 (主席树)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-POJ-2104-K-th-Number-题解"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">POJ 2104 [K-th Number] 题解</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-01-11 09:51:08" datetime="2018-01-11T01:51:08.000Z"  itemprop="datePublished">2018-01-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ACM/">ACM</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h1><p>给定一个长度为n的数组，m次查询。每次查询给出三个数（i, j, k），表示要求原数组的区间[i, j]升序排列中的第k个数。</p>
+<a id="more"></a>
+<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><p>求区间第k小的经典题目！来源于《挑战程序设计竞赛》P185例题。然后发现，这道题在4个月之前，我学习主席树的时候就做过一次。</p>
+<p>书上提供了平方分割和归并树的两种做法，下面我也将重现下这两种解法以及主席树的解法，并在最后对这三种优雅的解法作下对比。</p>
+<h2 id="solution-1-分块"><a href="#solution-1-分块" class="headerlink" title="solution 1 (分块)"></a>solution 1 (分块)</h2><p>假如题目提供了一个函数cnt(i, j, x)，返回原数组区间[i, j]中小于x的数的个数。那么我们要求的区间[i,j]第k小的数，也就是要求满足cnt(i, j, x) &lt; k的最大的x。</p>
+<p>于是，对x进行二分搜索，即可得到答案。</p>
+<p>那么，我们怎么样才能自己写出一个类似于cnt(i, j, x)的函数呢？</p>
+<p>假如数组区间[i, j]是有序的，那么我们很容易用lower_bound写出这个函数。</p>
+<p>虽然原数组不是有序的，但这么想能够给我们带来灵感。</p>
+<p>我们不妨把原数组分成若干块区间，然后对每一块区间进行排序。这就是分块算法。这样，数组在每一块区间内都是有序的。</p>
+<p>于是对于要查询的区间[i, j]所包含的那些完整的区间块，我们采用lower_bound算出cnt值。</p>
+<p>而区间[i, j]两端有一些元素是不在一个完整区间块的，对这些元素逐一检查即可。（反正这部分元素的个数不超过两倍块的长度，所以数量较少，逐一检查OK）</p>
+<h2 id="solution-2-归并树"><a href="#solution-2-归并树" class="headerlink" title="solution 2 (归并树)"></a>solution 2 (归并树)</h2><p>除了使用分块算法算出函数cnt(i, j, x)的值外，我们还可以采用归并树的做法。</p>
+<p>这里的归并树是一种特别的线段树，它完整记录下了归并排序的每一步结果。</p>
+<p>也就是，归并树的每一个结点，维护的是一个vector，这个vector就保存着结点对应区间排序后的结果。</p>
+<p>于是，建树的过程也就是归并排序的过程，只不过每一步merge的时候，要把中间的结果保存在线段树的结点的vector里。</p>
+<p>所以我们计算cnt(i, j, x)的值的时候，用线段树的思想求解即可。</p>
+<p>即，若查询区间与当前结点对应区间无交集，返回0；查询区间完整包含当前结点对应区间在内，则对当前结点的vector采用lower_bound返回结果；否则对线段树左右儿子递归查询，求和即可。</p>
+<h2 id="solution-3-主席树"><a href="#solution-3-主席树" class="headerlink" title="solution 3 (主席树)"></a>solution 3 (主席树)</h2><p>前面两种做法都是采用使数组部分有序后统计cnt值的思想。Solution1 中的部分有序指块数组的部分有序，Solution2中部分有序指线段树维护区间的部分有序。</p>
+<p>而主席树的做法采用完全不一样的思路。</p>
+<p>主席树也是一种特殊的线段树。它不是像Solution2或者往常RMQ问题一样，维护原数组的区间；而是像维护值域的区间。</p>
+<p>就是说，假如这个特殊的线段树的一个结点，维护的区间是[l, r), 记录值为dat，那么dat的意义是原数组中有多少个值位于[l, r)的范围内。</p>
+<p>现在考虑，假设我们已经对要查询的区间[i, j]构造了这样一棵线段树，要查询第k小的值，怎么找？</p>
+<p>其实很简单，从根结点找起，其实根结点对应的区间就是整个值域。考察左儿子的dat值，如果它大于等于k，也就是说有大于等于k个数位于左边的值域，于是我们就对左儿子进行递归查找；否则查找右儿子。直到查找的区间长度为1，那么这个就是答案。</p>
+<p>那么，假如我们对所有O(n^2)个区间都建这样一棵关于值分布的线段树，我们就能对任意区间，查询到第k小的答案了。</p>
+<p>显然，O(n^2)棵线段树是不现实的，根本没有这么多空间。</p>
+<p>用一下前缀和的思想，考虑原数组区间[i, j]对应的线段树，其实它可以由[1, j]和[1, i - 1]两棵线段树的值作差而来。（这里的“作差”就是对线段树每一个结点的dat值求一次差）</p>
+<p>所以我们实际上，只需要n棵线段树即可，n指值域长度。</p>
+<p>但是， O(n)棵线段树仍然不现实，没有这么多空间。</p>
+<p>主席树的巧妙之处就在这里。</p>
+<p>考察第i棵线段树和第i+1棵线段树的区别，也就是原数组区间[1, i]和[1, i + 1]分别对应的线段树。我们发现，后一棵线段树，比前一棵线段树，仅仅多更新了原数组中的一个数，即a[i+1].</p>
+<p>这样一来，两棵线段树仅仅只有从根到a[i+1]对应的叶这一条链是不同了（增加了1），其他结点完全相同。于是我们，只给这更新的一条链创建新结点可以，其他结点沿用旧的线段树的结点即可。</p>
+<p>那么，更新的线段树高度为O(log n)，所以会有O(log n)个结点更新，也就是，这棵线段树实际只占用O(log n)的内存空间，但在逻辑上，它依然是棵完整的线段树。</p>
+<p>另外，对于第零棵线段树，即原数组区间[1, 0]对应的线段树，所有结点dat值都为0，所以这整棵线段树用一个零结点来存就可以。</p>
+<p>这样一来，我们就能够实现，只用了O(nlogn)的内存空间，存放下了n + 1棵线段树（包括第零棵）的信息，因为很多结点都被多棵线段树共享了嘛。</p>
+<p>P.S.其实这种做法与第二种归并树的做法，有异曲同工之妙。归并树是把归并排序的中间结果全部记录下来。而主席树，实际上也是，把更新时的中间结果全部记录下来。对这样一棵表示值分布的线段树，我们依次从左往右拿原数组的值去更新线段树，每一次更新会修改O(log n)个结点，而主席树没有直接修改原树上的O(log n)个结点，而是新建了O(log n)个结点。这样，线段树在动态更新的过程中，每一个历史版本都被完整记录。</p>
+<h1 id="source-code"><a href="#source-code" class="headerlink" title="source code"></a>source code</h1><h2 id="solution-1-分块-1"><a href="#solution-1-分块-1" class="headerlink" title="solution 1 (分块)"></a>solution 1 (分块)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100002</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> B = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">int</span> bucket[maxn / B][B];</span><br><span class="line"><span class="keyword">int</span> a[maxn],nums[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> X=<span class="number">0</span>,w=<span class="number">0</span>; <span class="keyword">char</span> ch=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch)) &#123;w|=ch==<span class="string">'-'</span>;ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch)) X=(X&lt;&lt;<span class="number">3</span>)+(X&lt;&lt;<span class="number">1</span>)+(ch^<span class="number">48</span>),ch=getchar();</span><br><span class="line">    <span class="keyword">return</span> w?-X:X;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = read(), m = read();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        a[i] = read();</span><br><span class="line">        bucket[i/B][i%B] = a[i];</span><br><span class="line">        nums[i] = a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    sort(nums, nums + n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n / B; i++) sort(bucket[i], bucket[i] + B);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (m--) &#123;</span><br><span class="line">        <span class="keyword">int</span> l = read(), r = read(), k = read(); </span><br><span class="line">        <span class="keyword">int</span> ul = <span class="number">0</span>, ur = n;</span><br><span class="line">        <span class="keyword">while</span> (ul + <span class="number">1</span> &lt; ur) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (ul + ur) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="number">0</span>, tl = l - <span class="number">1</span>, tr = r; <span class="comment">// the number of items less than nums[mid]</span></span><br><span class="line">            <span class="keyword">while</span> (tl &lt; tr &amp;&amp; tl % B) cnt += (a[tl++] &lt; nums[mid]); </span><br><span class="line">            <span class="keyword">while</span> (tl &lt; tr &amp;&amp; tr % B) cnt += (a[--tr] &lt; nums[mid]);</span><br><span class="line">            <span class="keyword">while</span> (tl &lt; tr) &#123;</span><br><span class="line">                <span class="keyword">int</span> bi = tl / B;</span><br><span class="line">                cnt += lower_bound(bucket[bi], bucket[bi] + B, nums[mid]) - bucket[bi];</span><br><span class="line">                tl += B;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (cnt &gt;= k) ur = mid;</span><br><span class="line">            <span class="keyword">else</span> ul = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, nums[ul]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="solution-2-归并树-1"><a href="#solution-2-归并树-1" class="headerlink" title="solution 2 (归并树)"></a>solution 2 (归并树)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> X=<span class="number">0</span>,w=<span class="number">0</span>; <span class="keyword">char</span> ch=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch)) &#123;w|=ch==<span class="string">'-'</span>;ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch)) X=(X&lt;&lt;<span class="number">3</span>)+(X&lt;&lt;<span class="number">1</span>)+(ch^<span class="number">48</span>),ch=getchar();</span><br><span class="line">    <span class="keyword">return</span> w?-X:X;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">int</span> a[maxn],n,m,nums[maxn];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec[maxn * <span class="number">20</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> v = <span class="number">1</span>, <span class="keyword">int</span> l = <span class="number">0</span>, <span class="keyword">int</span> r = n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (l + <span class="number">1</span> == r) &#123;</span><br><span class="line">        vec[v].push_back(a[l]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>, chl = v * <span class="number">2</span>, chr = v * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">        build(chl, l, mid);</span><br><span class="line">        build(chr, mid, r);</span><br><span class="line">        vec[v].resize(vec[chl].size() + vec[chr].size());</span><br><span class="line">        merge(vec[chl].begin(), vec[chl].end(), vec[chr].begin(), vec[chr].end(), vec[v].begin());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> x, <span class="keyword">int</span> v = <span class="number">1</span>, <span class="keyword">int</span> l = <span class="number">0</span>, <span class="keyword">int</span> r = n)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r || r &lt;= L || R &lt;= l) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (L &lt;= l &amp;&amp; r &lt;= R) &#123;</span><br><span class="line">        <span class="keyword">int</span> res = lower_bound(vec[v].begin(), vec[v].end(), x) - vec[v].begin();</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>, chl = v * <span class="number">2</span>, chr = v * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> res= query(L, R, x, chl, l, mid) + query(L, R, x, chr, mid, r);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = read(),m = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        nums[i] = a[i] = read();</span><br><span class="line">    &#125;</span><br><span class="line">    sort(nums, nums + n);</span><br><span class="line">    build();</span><br><span class="line">    <span class="keyword">while</span> (m--) &#123;</span><br><span class="line">        <span class="keyword">int</span> l = read(), r = read(), k = read();</span><br><span class="line">        l--;</span><br><span class="line">        <span class="keyword">int</span> ul = <span class="number">0</span>, ur = n;</span><br><span class="line">        <span class="keyword">while</span> (ul + <span class="number">1</span> &lt; ur) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (ul + ur) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (query(l, r, nums[mid]) &gt;= k) ur = mid;</span><br><span class="line">            <span class="keyword">else</span> ul = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, nums[ul]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="solution-3-主席树-1"><a href="#solution-3-主席树-1" class="headerlink" title="solution 3 (主席树)"></a>solution 3 (主席树)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100010</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> X=<span class="number">0</span>,w=<span class="number">0</span>; <span class="keyword">char</span> ch=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch)) &#123;w|=ch==<span class="string">'-'</span>;ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch)) X=(X&lt;&lt;<span class="number">3</span>)+(X&lt;&lt;<span class="number">1</span>)+(ch^<span class="number">48</span>),ch=getchar();</span><br><span class="line">    <span class="keyword">return</span> w?-X:X;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r, dat;</span><br><span class="line">    node(<span class="keyword">int</span> l = <span class="number">0</span>, <span class="keyword">int</span> r = <span class="number">0</span>, <span class="keyword">int</span> dat = <span class="number">0</span>):l(l),r(r),dat(dat)&#123;&#125;</span><br><span class="line">&#125;T[maxn * <span class="number">20</span>];</span><br><span class="line"><span class="keyword">int</span> rt[maxn], a[maxn], b[maxn], sz = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> &amp;o, <span class="keyword">int</span> x, <span class="keyword">int</span> last, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123; <span class="comment">// [l, r)</span></span><br><span class="line">    o = ++sz;</span><br><span class="line">    T[o] = T[last];</span><br><span class="line">    T[o].dat++;</span><br><span class="line">    <span class="keyword">if</span> (l + <span class="number">1</span> &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; mid) update(T[o].l, x, T[last].l, l, mid);</span><br><span class="line">    <span class="keyword">else</span> update(T[o].r, x, T[last].r, mid, r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> t1, <span class="keyword">int</span> t2, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> k)</span> </span>&#123; <span class="comment">// [l, r)</span></span><br><span class="line">    <span class="keyword">if</span> (l + <span class="number">1</span> &gt;= r) <span class="keyword">return</span> l;</span><br><span class="line">    <span class="keyword">int</span> cnt = T[T[t2].l].dat - T[T[t1].l].dat, mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (cnt &gt;= k) <span class="keyword">return</span> query(T[t1].l, T[t2].l, l, mid, k);</span><br><span class="line">    <span class="keyword">return</span> query(T[t1].r, T[t2].r, mid, r, k - cnt);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    fill(T, T + maxn * <span class="number">20</span>, node());</span><br><span class="line">    fill(rt, rt + maxn, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> N = read(), Q = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) b[i] = a[i] = read();</span><br><span class="line">    sort(b, b + N);</span><br><span class="line">    <span class="keyword">int</span> n = unique(b, b + N) - b;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        a[i] = lower_bound(b, b + n, a[i]) - b;</span><br><span class="line">        update(rt[i + <span class="number">1</span>], a[i], rt[i], <span class="number">0</span>, n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (Q--) &#123;</span><br><span class="line">        <span class="keyword">int</span> l = read(), r = read(), k = read();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, b[query(rt[l - <span class="number">1</span>], rt[r], <span class="number">0</span>, n, k)]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Time(ms)</th>
+<th style="text-align:center">Memory(MB)</th>
+<th style="text-align:center">Code Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">分块</td>
+<td style="text-align:center">11516</td>
+<td style="text-align:center">1.5</td>
+<td style="text-align:center">1337</td>
+</tr>
+<tr>
+<td style="text-align:center">归并树</td>
+<td style="text-align:center">6344</td>
+<td style="text-align:center">37.1</td>
+<td style="text-align:center">1662</td>
+</tr>
+<tr>
+<td style="text-align:center">主席树</td>
+<td style="text-align:center">1735</td>
+<td style="text-align:center">25</td>
+<td style="text-align:center">1469</td>
+</tr>
+</tbody>
+</table>
+<p>最后送上三种解法的耗时，内存占用和代码长度的直观对比。</p>
+<p>分块的实现最简单，代码最短，空间开销也最小，但非常慢，濒临超时。实际上，如果不加读入优化的话，那么分块就超时了。可见，非常凶险。</p>
+<p>完美复现归并排序的归并树显然内存消耗是最高的，因为采用的是和分块一样的思路，也要有两层的二分查找，所以即使使用了线段树，但总耗时也只是节省了一半不到。</p>
+<p>最后一种，主席树的做法，从原理上来讲，最复杂，但同时也最优美。从表中可以看出，时间比归并树快很多，空间开销和代码长度都最小，所以毫无疑问是本题的最佳解法。</p>
+<p>P.S. 有同学可以提供比主席树更好的做法吗？感激不禁。（发现自己能在不同解法的对比中学到更多）</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-05-02T06:38:14.000Z" itemprop="dateUpdated">2018-05-02 14:38:14</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://dafenghh.github.io">
+            <img src="/img/dafeng.jpg" alt="Dafenghh">
+            Dafenghh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structures/">data structures</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/segment-tree/">segment tree</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sqrt-decomposition/">sqrt decomposition</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主席树/">主席树</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://dafenghh.github.io/post/76b5095a.html&title=《POJ 2104 [K-th Number] 题解》 — Dafenghh's Blog&pic=http://dafenghh.github.io/img/dafeng.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dafenghh.github.io/post/76b5095a.html&title=《POJ 2104 [K-th Number] 题解》 — Dafenghh's Blog&source=题目大意给定一个长度为n的数组，m次查询。每次查询给出三个数（i, j, k），表示要求原数组的区间[i, j]升序排列中的第k个数。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://dafenghh.github.io/post/76b5095a.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《POJ 2104 [K-th Number] 题解》 — Dafenghh's Blog&url=http://dafenghh.github.io/post/76b5095a.html&via=http://dafenghh.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://dafenghh.github.io/post/76b5095a.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/post/c9635eac.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">POJ 3368 [Frequent Values] 题解</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/post/63c20c7e.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">POJ 2886 [Who gets the Most Candies] 题解</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "8QX43Q8DoVC4wBF3qEXmx1ue-gzGzoHsz",
+            appKey: "waVFgUV7PtULmRX6XPfFarqo",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Dafenghh &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://dafenghh.github.io/post/76b5095a.html&title=《POJ 2104 [K-th Number] 题解》 — Dafenghh's Blog&pic=http://dafenghh.github.io/img/dafeng.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dafenghh.github.io/post/76b5095a.html&title=《POJ 2104 [K-th Number] 题解》 — Dafenghh's Blog&source=题目大意给定一个长度为n的数组，m次查询。每次查询给出三个数（i, j, k），表示要求原数组的区间[i, j]升序排列中的第k个数。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://dafenghh.github.io/post/76b5095a.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《POJ 2104 [K-th Number] 题解》 — Dafenghh's Blog&url=http://dafenghh.github.io/post/76b5095a.html&via=http://dafenghh.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://dafenghh.github.io/post/76b5095a.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://dafenghh.github.io/post/76b5095a.html" alt="微信分享二维码">
+</div>
+
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Pending....';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Reading....';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
