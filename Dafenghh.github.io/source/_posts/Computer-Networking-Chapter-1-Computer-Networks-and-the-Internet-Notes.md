@@ -55,10 +55,38 @@ With guided media, the waves are guided along a solid medium, such as a fiber-op
 # 1.3 Network Core
 
 ## 1.3.1 Packet Switching
-packet switches (for which there are two predominant types, routers and linklayer switches)
+packet switches (for which there are two predominant types, routers and link layer switches)
 
 ### Store-and-Forward Transmission
 > The packet switch must receive the entire packet before it can begin to transmit the first bit of the packet onto the outbound link.
 
+### Queuing Delays and Packet Loss
+**output buffer**
+In addition to the store-and-forward delays, packets suffer output buffer **queuing delays**.
 
+**Packet loss** may occur when buffer is completely full.
 
+### Forwarding Tables and Routing Protocols
+Each router has a **forwarding table** that maps destination addresses (or portions of the destination addresses) to that router’s outbound links. 
+
+The Internet has a number of special **routing protocols** that are used to automatically set the forwarding tables.
+
+## 1.3.2 Circuit Switching
+In circuit-switched networks, the resources needed along a path (buffers, link transmission rate) to provide for communication between the end systems are reserved for the duration of the communication session between the end systems.
+
+e.g. traditional telephone networks
+
+**guaranteed** constant rate
+
+### Multiplexing in Circuit-Switched Networks
+A circuit in a link is implemented with either frequency-division multiplexing (FDM) or time-division multiplexing (TDM).
+
+频分/时分多路复用
+
+## 1.3.3 A Network of Networks
+
+regional ISPs
+
+tier-1 ISPs
+
+阅读至P60.
