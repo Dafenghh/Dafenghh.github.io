@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dafenghh.github.io/"/>
-  <updated>2018-05-09T13:47:08.000Z</updated>
+  <updated>2018-09-05T16:07:00.000Z</updated>
   <id>http://dafenghh.github.io/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Computer Networking, Chapter 1, Computer Networks and the Internet, Notes</title>
+    <link href="http://dafenghh.github.io/post/527c28.html"/>
+    <id>http://dafenghh.github.io/post/527c28.html</id>
+    <published>2018-09-04T02:13:08.000Z</published>
+    <updated>2018-09-05T16:07:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-1-3-What’s-Protocol"><a href="#1-1-3-What’s-Protocol" class="headerlink" title="1.1.3 What’s Protocol?"></a>1.1.3 What’s Protocol?</h2><p>A protocol defines the format and the order of messages exchanged between two or more communicating entities, as well as the actions taken on the transmission and/or receipt of a message or other event.</p><h1 id="1-2-Network-Edge"><a href="#1-2-Network-Edge" class="headerlink" title="1.2 Network Edge"></a>1.2 Network Edge</h1><p><strong>end systems</strong> = <strong>hosts</strong> (Two categories: clients and servers)</p><p>Today, most of the servers from which we receive search results, e-mail, Web pages, and videos reside in large <strong>data centers</strong>.</p><h2 id="1-2-1-Access-Networks"><a href="#1-2-1-Access-Networks" class="headerlink" title="1.2.1 Access Networks"></a>1.2.1 Access Networks</h2><p>The <strong>access network</strong>: the network that physically connects an end system to the first router (also known as the “edge router”) on a path from the end system to any other distant end system. </p><h3 id="Home-Access"><a href="#Home-Access" class="headerlink" title="Home Access"></a>Home Access</h3><p>Today, the two most prevalent types of broadband residential access are <strong>digital subscriber line</strong> (DSL) and <strong>cable</strong>.</p><p>DSL: 数字用户线路，是以电话线为传输介质的传输技术组合。<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="img/cn1.1.png" alt="DSL Internet access" title="">                </div>                <div class="image-caption">DSL Internet access</div>            </figure></p><p>Fiber optics connect the cable head end to neighborhood-level junctions, from which traditional coaxial cable is then used to reach individual houses and apartments.<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="img/cn1.2.png" alt="A hybrid fiber-coaxial access network" title="">                </div>                <div class="image-caption">A hybrid fiber-coaxial access network</div>            </figure><br>Because both fiber and coaxial cable are employed in this system, it is often referred to as <strong>hybrid fiber coax</strong> (HFC).</p><p>Coaxial cable: 同轴电缆<br>cable modem termination system (CMTS)</p><h3 id="Ethernet-and-Wi-Fi"><a href="#Ethernet-and-Wi-Fi" class="headerlink" title="Ethernet and Wi-Fi"></a>Ethernet and Wi-Fi</h3><p>LAN: local area network<br>Although there are many types of LAN technologies, Ethernet is by far the most prevalent access technology.</p><h3 id="Wide-Area-Wireless-Access-3G-and-LTE"><a href="#Wide-Area-Wireless-Access-3G-and-LTE" class="headerlink" title="Wide-Area Wireless Access: 3G and LTE"></a>Wide-Area Wireless Access: 3G and LTE</h3><p>LTE: Long-Term Evolution 长期演进技术</p><h2 id="1-2-2-Physical-Media"><a href="#1-2-2-Physical-Media" class="headerlink" title="1.2.2 Physical Media"></a>1.2.2 Physical Media</h2><p>Physical media fall into two categories: guided media and unguided media.</p><p>With guided media, the waves are guided along a solid medium, such as a fiber-optic cable, a twisted-pair copper wire, or a coaxial cable. With unguided media, the waves propagate in the atmosphere and in outer space, such as in a wireless LAN or a digital satellite channel.</p><ol><li>Twisted-Pair Copper Wire</li><li>Coaxial Cable</li><li>Fiber Optics</li><li>Terrestrial Radio Channels</li><li>Satellite Radio Channels<br>geostationary satellites, low-earth orbiting (LEO) satellites</li></ol><h1 id="1-3-Network-Core"><a href="#1-3-Network-Core" class="headerlink" title="1.3 Network Core"></a>1.3 Network Core</h1><h2 id="1-3-1-Packet-Switching"><a href="#1-3-1-Packet-Switching" class="headerlink" title="1.3.1 Packet Switching"></a>1.3.1 Packet Switching</h2><p>packet switches (for which there are two predominant types, routers and link layer switches)</p><h3 id="Store-and-Forward-Transmission"><a href="#Store-and-Forward-Transmission" class="headerlink" title="Store-and-Forward Transmission"></a>Store-and-Forward Transmission</h3><blockquote><p>The packet switch must receive the entire packet before it can begin to transmit the first bit of the packet onto the outbound link.</p></blockquote><h3 id="Queuing-Delays-and-Packet-Loss"><a href="#Queuing-Delays-and-Packet-Loss" class="headerlink" title="Queuing Delays and Packet Loss"></a>Queuing Delays and Packet Loss</h3><p><strong>output buffer</strong><br>In addition to the store-and-forward delays, packets suffer output buffer <strong>queuing delays</strong>.</p><p><strong>Packet loss</strong> may occur when buffer is completely full.</p><h3 id="Forwarding-Tables-and-Routing-Protocols"><a href="#Forwarding-Tables-and-Routing-Protocols" class="headerlink" title="Forwarding Tables and Routing Protocols"></a>Forwarding Tables and Routing Protocols</h3><p>Each router has a <strong>forwarding table</strong> that maps destination addresses (or portions of the destination addresses) to that router’s outbound links. </p><p>The Internet has a number of special <strong>routing protocols</strong> that are used to automatically set the forwarding tables.</p><h2 id="1-3-2-Circuit-Switching"><a href="#1-3-2-Circuit-Switching" class="headerlink" title="1.3.2 Circuit Switching"></a>1.3.2 Circuit Switching</h2><p>In circuit-switched networks, the resources needed along a path (buffers, link transmission rate) to provide for communication between the end systems are reserved for the duration of the communication session between the end systems.</p><p>e.g. traditional telephone networks</p><p><strong>guaranteed</strong> constant rate</p><h3 id="Multiplexing-in-Circuit-Switched-Networks"><a href="#Multiplexing-in-Circuit-Switched-Networks" class="headerlink" title="Multiplexing in Circuit-Switched Networks"></a>Multiplexing in Circuit-Switched Networks</h3><p>A circuit in a link is implemented with either frequency-division multiplexing (FDM) or time-division multiplexing (TDM).</p><p>频分/时分多路复用</p><h2 id="1-3-3-A-Network-of-Networks"><a href="#1-3-3-A-Network-of-Networks" class="headerlink" title="1.3.3 A Network of Networks"></a>1.3.3 A Network of Networks</h2><p>regional ISPs</p><p>tier-1 ISPs</p><p>阅读至P60.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-1-3-What’s-Protocol&quot;&gt;&lt;a href=&quot;#1-1-3-What’s-Protocol&quot; class=&quot;headerlink&quot; title=&quot;1.1.3 What’s Protocol?&quot;&gt;&lt;/a&gt;1.1.3 What’s Protocol?
+      
+    
+    </summary>
+    
+      <category term="Notes" scheme="http://dafenghh.github.io/categories/Notes/"/>
+    
+    
+      <category term="Computer Networking" scheme="http://dafenghh.github.io/tags/Computer-Networking/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Codeforces Round #493 Summary</title>
+    <link href="http://dafenghh.github.io/post/96fa61b.html"/>
+    <id>http://dafenghh.github.io/post/96fa61b.html</id>
+    <published>2018-07-21T14:07:54.000Z</published>
+    <updated>2018-07-22T13:26:02.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
+    
+    
+      <category term="codeforces" scheme="http://dafenghh.github.io/tags/codeforces/"/>
+    
+  </entry>
   
   <entry>
     <title>CodeChef - SCIENCEF Science Fair 题解</title>
@@ -126,7 +169,7 @@
     <link href="http://dafenghh.github.io/post/9ffddd26.html"/>
     <id>http://dafenghh.github.io/post/9ffddd26.html</id>
     <published>2018-04-29T12:13:01.000Z</published>
-    <updated>2018-05-09T13:47:52.000Z</updated>
+    <updated>2018-05-09T13:50:36.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><p>赛中通过3题，FDK.  F是暴力水题，D和K一共7记罚时，做得不好。D的错误是考虑错了复杂度，所以超时，加上输出%lld写成%d（经典错误）。K的错误是思考不谨慎，连边时加了一个多余的判断条件。</p><p>赛后没把H想出来。已经想得差不多，不过看错数据范围。一直以为要O(n^2)算法，其实是O(n^3). 要是看仔细点说不定就能想出来。（经典DP套路，请把训练指南的DP章节刷一遍，锻炼思维！）</p><p>赛后补了AHJ。还差EIB。加油，补完！</p><ul><li style="list-style: none"><input type="checkbox" checked> A</li><li style="list-style: none"><input type="checkbox" checked> J</li><li style="list-style: none"><input type="checkbox"> B</li><li style="list-style: none"><input type="checkbox"> E</li><li style="list-style: none"><input type="checkbox"> I</li></ul><a id="more"></a><h2 id="A-Science-Fair"><a href="#A-Science-Fair" class="headerlink" title="A Science Fair"></a>A Science Fair</h2><h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>有N个学生，住在不同的地方。现在学校要选学生去参加科技节活动。每个学生被选去的概率的百分数等于他们的百分制成绩。</p><p>大巴在S处出发，先去接送学校选去的学生，然后开到终点F。由于学生太过活跃，当大巴经过了他们家时，他们就算没被学校选中也会强行上车。每个学生有一个talkativeness，一次旅途的talkativeness等于所有上了车的学生的talkativeness的乘积。一次旅途的cost定义如下：</p><p> cost(Trip) = Length(Trip) + (Talkativeness(Trip) % (1e9+7）)</p><p> 司机会选择一条使cost最小的路线行驶。问cost的期望。</p><h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p>扩展版旅行商问题。<br>关键是先重构图。压缩至只有S，F跟学生所在点。而这些点间的边权应该定义为原图中不经过别的学生的最短路长度。用$n^2$次dijkstra重构图完成后，就是一个旅行商问题了。之后状态压缩DP解决。</p><p><code>dp1[x][i]</code>表示当前走到第i个点，访问过的点集为x的最小cost。<br><code>dp2[x]</code>表示访问学生集合为x以及x的超集的最小cost。这就是最终答案了。</p><p>见<a href="a5930d20.html">Science Fair题解</a></p><h2 id="B-Black-Discs"><a href="#B-Black-Discs" class="headerlink" title="B Black Discs"></a>B Black Discs</h2><h2 id="C-Uniform-Strings"><a href="#C-Uniform-Strings" class="headerlink" title="C Uniform Strings"></a>C Uniform Strings</h2><h2 id="D-SAD-Queries"><a href="#D-SAD-Queries" class="headerlink" title="D SAD Queries"></a>D SAD Queries</h2><h2 id="E-Chef-and-XOR-Queries"><a href="#E-Chef-and-XOR-Queries" class="headerlink" title="E Chef and XOR Queries"></a>E Chef and XOR Queries</h2><h2 id="F-Taxi-Making-Sharp-Turns"><a href="#F-Taxi-Making-Sharp-Turns" class="headerlink" title="F Taxi Making Sharp Turns"></a>F Taxi Making Sharp Turns</h2><h2 id="G-Spam-Classification-Using-Neural-Net"><a href="#G-Spam-Classification-Using-Neural-Net" class="headerlink" title="G Spam Classification Using Neural Net"></a>G Spam Classification Using Neural Net</h2><h2 id="H-Non-Overlapping-Segments"><a href="#H-Non-Overlapping-Segments" class="headerlink" title="H Non Overlapping Segments"></a>H Non Overlapping Segments</h2><h2 id="I-Spanning-Tree"><a href="#I-Spanning-Tree" class="headerlink" title="I Spanning Tree"></a>I Spanning Tree</h2><h2 id="J-Generating-A-Permutation"><a href="#J-Generating-A-Permutation" class="headerlink" title="J Generating A Permutation"></a>J Generating A Permutation</h2><h3 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意"></a>题目大意</h3><p>对一个排列P，[p1, p2, …, pN-1, pN], 定义 f(P) = max(p1, p2) + max(p2, p3) + … + max(pN-1, pN)</p><p>给出N，K。构造排列P， 使f(P) = K. 如果不存在，就输出-1.</p><h3 id="solution-1"><a href="#solution-1" class="headerlink" title="solution"></a>solution</h3><p>f(P)的值是N-1个数的和。而原排列中的数，最多贡献两次答案。</p><p>考虑排列是正序时，f(P)取到最小值，为2+3+…+N。也即2到N的数，每个数贡献1次。<br>最大值应该是在最大的那些数都贡献2次时取到。</p><p>怎么让最大那个数贡献2次？只需要不把它放两端就可以了。</p><p>另外注意到，一个大的数a多贡献一次的同时，就会剥夺另外一个较小的数b的贡献机会，这时候就会使答案增加a-b.</p><p>所以这道题的构造方法就是，设a为下一个贡献多一次的数，b为下一个被剥夺贡献机会的数。考虑当前的和，如果加上b-a比答案大，我们就让b大一些，直到满足条件。然后把刚刚考虑过的b依次append到答案数组，再append a就行。</p><p>见<a href="75299267.html">Generating A Permutation题解</a></p><h2 id="K-Number-Game"><a href="#K-Number-Game" class="headerlink" title="K Number Game"></a>K Number Game</h2>]]></content>
     
@@ -148,7 +191,7 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="Summary" scheme="http://dafenghh.github.io/tags/Summary/"/>
+      <category term="summary" scheme="http://dafenghh.github.io/tags/summary/"/>
     
   </entry>
   
@@ -757,9 +800,9 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="math" scheme="http://dafenghh.github.io/tags/math/"/>
-    
       <category term="segment tree" scheme="http://dafenghh.github.io/tags/segment-tree/"/>
+    
+      <category term="math" scheme="http://dafenghh.github.io/tags/math/"/>
     
       <category term="geometry" scheme="http://dafenghh.github.io/tags/geometry/"/>
     
@@ -1071,9 +1114,9 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="dp" scheme="http://dafenghh.github.io/tags/dp/"/>
-    
       <category term="graphs" scheme="http://dafenghh.github.io/tags/graphs/"/>
+    
+      <category term="dp" scheme="http://dafenghh.github.io/tags/dp/"/>
     
       <category term="scc" scheme="http://dafenghh.github.io/tags/scc/"/>
     

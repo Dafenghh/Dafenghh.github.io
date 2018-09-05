@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Computer Networking, Chapter 1, Computer Networks and the Internet, Notes | Dafenghh&#39;s Blog | To Be Top Coder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Computer Networking">
+    <meta name="description" content="1.1.3 What’s Protocol?A protocol defines the format and the order of messages exchanged between two or more communicating entities, as well as the actions taken on the transmission and/or receipt of a">
+<meta name="keywords" content="Computer Networking">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Computer Networking, Chapter 1, Computer Networks and the Internet, Notes">
+<meta property="og:url" content="http://dafenghh.github.io/post/527c28.html">
+<meta property="og:site_name" content="Dafenghh&#39;s Blog">
+<meta property="og:description" content="1.1.3 What’s Protocol?A protocol defines the format and the order of messages exchanged between two or more communicating entities, as well as the actions taken on the transmission and/or receipt of a">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://dafenghh.github.io/post/img/cn1.1.png">
+<meta property="og:image" content="http://dafenghh.github.io/post/img/cn1.2.png">
+<meta property="og:updated_time" content="2018-09-05T16:07:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Computer Networking, Chapter 1, Computer Networks and the Internet, Notes">
+<meta name="twitter:description" content="1.1.3 What’s Protocol?A protocol defines the format and the order of messages exchanged between two or more communicating entities, as well as the actions taken on the transmission and/or receipt of a">
+<meta name="twitter:image" content="http://dafenghh.github.io/post/img/cn1.1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Dafenghh&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/dafeng.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Dafenghh</h5>
+          <a href="mailto:xudafeng88@qq.com" title="xudafeng88@qq.com" class="mail">xudafeng88@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/dafenghh" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Computer Networking, Chapter 1, Computer Networks and the Internet, Notes</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Computer Networking, Chapter 1, Computer Networks and the Internet, Notes</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-04T02:13:08.000Z" itemprop="datePublished" class="page-time">
+  2018-09-04
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Notes/">Notes</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-1-3-What’s-Protocol"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.1.3 What’s Protocol?</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-2-Network-Edge"><span class="post-toc-number"></span> <span class="post-toc-text">1.2 Network Edge</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-2-1-Access-Networks"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.2.1 Access Networks</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Home-Access"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Home Access</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ethernet-and-Wi-Fi"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Ethernet and Wi-Fi</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Wide-Area-Wireless-Access-3G-and-LTE"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Wide-Area Wireless Access: 3G and LTE</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-2-2-Physical-Media"><span class="post-toc-number">2.</span> <span class="post-toc-text">1.2.2 Physical Media</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-3-Network-Core"><span class="post-toc-number"></span> <span class="post-toc-text">1.3 Network Core</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-3-1-Packet-Switching"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.3.1 Packet Switching</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Store-and-Forward-Transmission"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Store-and-Forward Transmission</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Queuing-Delays-and-Packet-Loss"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Queuing Delays and Packet Loss</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Forwarding-Tables-and-Routing-Protocols"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Forwarding Tables and Routing Protocols</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-3-2-Circuit-Switching"><span class="post-toc-number">2.</span> <span class="post-toc-text">1.3.2 Circuit Switching</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Multiplexing-in-Circuit-Switched-Networks"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Multiplexing in Circuit-Switched Networks</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-3-3-A-Network-of-Networks"><span class="post-toc-number">3.</span> <span class="post-toc-text">1.3.3 A Network of Networks</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Computer-Networking-Chapter-1-Computer-Networks-and-the-Internet-Notes"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Computer Networking, Chapter 1, Computer Networks and the Internet, Notes</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-04 10:13:08" datetime="2018-09-04T02:13:08.000Z"  itemprop="datePublished">2018-09-04</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Notes/">Notes</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="1-1-3-What’s-Protocol"><a href="#1-1-3-What’s-Protocol" class="headerlink" title="1.1.3 What’s Protocol?"></a>1.1.3 What’s Protocol?</h2><p>A protocol defines the format and the order of messages exchanged between two or more communicating entities, as well as the actions taken on the transmission and/or receipt of a message or other event.</p>
+<h1 id="1-2-Network-Edge"><a href="#1-2-Network-Edge" class="headerlink" title="1.2 Network Edge"></a>1.2 Network Edge</h1><p><strong>end systems</strong> = <strong>hosts</strong> (Two categories: clients and servers)</p>
+<p>Today, most of the servers from which we receive search results, e-mail, Web pages, and videos reside in large <strong>data centers</strong>.</p>
+<h2 id="1-2-1-Access-Networks"><a href="#1-2-1-Access-Networks" class="headerlink" title="1.2.1 Access Networks"></a>1.2.1 Access Networks</h2><p>The <strong>access network</strong>: the network that physically connects an end system to the first router (also known as the “edge router”) on a path from the end system to any other distant end system. </p>
+<h3 id="Home-Access"><a href="#Home-Access" class="headerlink" title="Home Access"></a>Home Access</h3><p>Today, the two most prevalent types of broadband residential access are <strong>digital subscriber line</strong> (DSL) and <strong>cable</strong>.</p>
+<p>DSL: 数字用户线路，是以电话线为传输介质的传输技术组合。<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="img/cn1.1.png" alt="DSL Internet access" title="">
+                </div>
+                <div class="image-caption">DSL Internet access</div>
+            </figure></p>
+<p>Fiber optics connect the cable head end to neighborhood-level junctions, from which traditional coaxial cable is then used to reach individual houses and apartments.<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="img/cn1.2.png" alt="A hybrid fiber-coaxial access network" title="">
+                </div>
+                <div class="image-caption">A hybrid fiber-coaxial access network</div>
+            </figure><br>Because both fiber and coaxial cable are employed in this system, it is often referred to as <strong>hybrid fiber coax</strong> (HFC).</p>
+<p>Coaxial cable: 同轴电缆<br>cable modem termination system (CMTS)</p>
+<h3 id="Ethernet-and-Wi-Fi"><a href="#Ethernet-and-Wi-Fi" class="headerlink" title="Ethernet and Wi-Fi"></a>Ethernet and Wi-Fi</h3><p>LAN: local area network<br>Although there are many types of LAN technologies, Ethernet is by far the most prevalent access technology.</p>
+<h3 id="Wide-Area-Wireless-Access-3G-and-LTE"><a href="#Wide-Area-Wireless-Access-3G-and-LTE" class="headerlink" title="Wide-Area Wireless Access: 3G and LTE"></a>Wide-Area Wireless Access: 3G and LTE</h3><p>LTE: Long-Term Evolution 长期演进技术</p>
+<h2 id="1-2-2-Physical-Media"><a href="#1-2-2-Physical-Media" class="headerlink" title="1.2.2 Physical Media"></a>1.2.2 Physical Media</h2><p>Physical media fall into two categories: guided media and unguided media.</p>
+<p>With guided media, the waves are guided along a solid medium, such as a fiber-optic cable, a twisted-pair copper wire, or a coaxial cable. With unguided media, the waves propagate in the atmosphere and in outer space, such as in a wireless LAN or a digital satellite channel.</p>
+<ol>
+<li>Twisted-Pair Copper Wire</li>
+<li>Coaxial Cable</li>
+<li>Fiber Optics</li>
+<li>Terrestrial Radio Channels</li>
+<li>Satellite Radio Channels<br>geostationary satellites, low-earth orbiting (LEO) satellites</li>
+</ol>
+<h1 id="1-3-Network-Core"><a href="#1-3-Network-Core" class="headerlink" title="1.3 Network Core"></a>1.3 Network Core</h1><h2 id="1-3-1-Packet-Switching"><a href="#1-3-1-Packet-Switching" class="headerlink" title="1.3.1 Packet Switching"></a>1.3.1 Packet Switching</h2><p>packet switches (for which there are two predominant types, routers and link layer switches)</p>
+<h3 id="Store-and-Forward-Transmission"><a href="#Store-and-Forward-Transmission" class="headerlink" title="Store-and-Forward Transmission"></a>Store-and-Forward Transmission</h3><blockquote>
+<p>The packet switch must receive the entire packet before it can begin to transmit the first bit of the packet onto the outbound link.</p>
+</blockquote>
+<h3 id="Queuing-Delays-and-Packet-Loss"><a href="#Queuing-Delays-and-Packet-Loss" class="headerlink" title="Queuing Delays and Packet Loss"></a>Queuing Delays and Packet Loss</h3><p><strong>output buffer</strong><br>In addition to the store-and-forward delays, packets suffer output buffer <strong>queuing delays</strong>.</p>
+<p><strong>Packet loss</strong> may occur when buffer is completely full.</p>
+<h3 id="Forwarding-Tables-and-Routing-Protocols"><a href="#Forwarding-Tables-and-Routing-Protocols" class="headerlink" title="Forwarding Tables and Routing Protocols"></a>Forwarding Tables and Routing Protocols</h3><p>Each router has a <strong>forwarding table</strong> that maps destination addresses (or portions of the destination addresses) to that router’s outbound links. </p>
+<p>The Internet has a number of special <strong>routing protocols</strong> that are used to automatically set the forwarding tables.</p>
+<h2 id="1-3-2-Circuit-Switching"><a href="#1-3-2-Circuit-Switching" class="headerlink" title="1.3.2 Circuit Switching"></a>1.3.2 Circuit Switching</h2><p>In circuit-switched networks, the resources needed along a path (buffers, link transmission rate) to provide for communication between the end systems are reserved for the duration of the communication session between the end systems.</p>
+<p>e.g. traditional telephone networks</p>
+<p><strong>guaranteed</strong> constant rate</p>
+<h3 id="Multiplexing-in-Circuit-Switched-Networks"><a href="#Multiplexing-in-Circuit-Switched-Networks" class="headerlink" title="Multiplexing in Circuit-Switched Networks"></a>Multiplexing in Circuit-Switched Networks</h3><p>A circuit in a link is implemented with either frequency-division multiplexing (FDM) or time-division multiplexing (TDM).</p>
+<p>频分/时分多路复用</p>
+<h2 id="1-3-3-A-Network-of-Networks"><a href="#1-3-3-A-Network-of-Networks" class="headerlink" title="1.3.3 A Network of Networks"></a>1.3.3 A Network of Networks</h2><p>regional ISPs</p>
+<p>tier-1 ISPs</p>
+<p>阅读至P60.</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-09-05T16:07:00.000Z" itemprop="dateUpdated">2018-09-06 00:07:00</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://dafenghh.github.io">
+            <img src="/img/dafeng.jpg" alt="Dafenghh">
+            Dafenghh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computer-Networking/">Computer Networking</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://dafenghh.github.io/post/527c28.html&title=《Computer Networking, Chapter 1, Computer Networks and the Internet, Notes》 — Dafenghh's Blog&pic=http://dafenghh.github.io/img/dafeng.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dafenghh.github.io/post/527c28.html&title=《Computer Networking, Chapter 1, Computer Networks and the Internet, Notes》 — Dafenghh's Blog&source=Turn what you want to do into a habit like brushing your teeth." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://dafenghh.github.io/post/527c28.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Computer Networking, Chapter 1, Computer Networks and the Internet, Notes》 — Dafenghh's Blog&url=http://dafenghh.github.io/post/527c28.html&via=http://dafenghh.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://dafenghh.github.io/post/527c28.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/post/96fa61b.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Codeforces Round #493 Summary</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "8QX43Q8DoVC4wBF3qEXmx1ue-gzGzoHsz",
+            appKey: "waVFgUV7PtULmRX6XPfFarqo",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Dafenghh &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://dafenghh.github.io/post/527c28.html&title=《Computer Networking, Chapter 1, Computer Networks and the Internet, Notes》 — Dafenghh's Blog&pic=http://dafenghh.github.io/img/dafeng.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dafenghh.github.io/post/527c28.html&title=《Computer Networking, Chapter 1, Computer Networks and the Internet, Notes》 — Dafenghh's Blog&source=Turn what you want to do into a habit like brushing your teeth." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://dafenghh.github.io/post/527c28.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Computer Networking, Chapter 1, Computer Networks and the Internet, Notes》 — Dafenghh's Blog&url=http://dafenghh.github.io/post/527c28.html&via=http://dafenghh.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://dafenghh.github.io/post/527c28.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://dafenghh.github.io/post/527c28.html" alt="微信分享二维码">
+</div>
+
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Pending....';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Reading....';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
