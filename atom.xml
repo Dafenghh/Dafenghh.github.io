@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dafenghh.github.io/"/>
-  <updated>2018-09-11T09:24:44.000Z</updated>
+  <updated>2019-01-25T02:17:48.000Z</updated>
   <id>http://dafenghh.github.io/</id>
   
   <author>
@@ -17,11 +17,104 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CCPC-Wannafly Winter Camp 2019 Day 4 题解</title>
+    <link href="http://dafenghh.github.io/post/5505493b.html"/>
+    <id>http://dafenghh.github.io/post/5505493b.html</id>
+    <published>2019-01-24T23:49:58.000Z</published>
+    <updated>2019-01-25T02:17:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="H-命命命运"><a href="#H-命命命运" class="headerlink" title="H 命命命运"></a>H 命命命运</h1><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>wls等六人在玩大富翁。</p><p>大富翁的棋盘上一共有n块地，这些地围成了一个圈（n号地的下一块地是1号地）。</p><p>每一轮，六个玩家会依次掷出一颗骰子（编号小的玩家先掷），并往前走骰子上显示的数字那么多步。</p><p>第一个踩到某块地的玩家能够得到这块地。</p><p>给出<code>p[i][j]</code>, 表示第i个玩家掷出j的概率。</p><p>现在请问，500轮以后，每个玩家拥有的地的块数的期望分别是多少？</p><p>所有人都从1号点出发，出发前大家不能买地（第二次到1号点才能买这块地）。</p><h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>我们需要求出对于i号玩家，第j轮，获得第k块地的概率，然后把所有j,k取值下的概率累加起来，就是每个人获得地的块数的期望。i号玩家，获得第j块地等价于<code>1..(i-1)</code>号玩家前j轮不曾走到k，i号玩家第j轮第一次走到k，<code>(i+1)..6</code>号玩家前(j-1)轮未曾走到k.</p><p>于是我们要求出两个概率来，<code>never[i][j][k]</code>表示i号玩家前j轮未曾走到k的概率，<code>first[i][j][k]</code>表示i号玩家第j轮第一次走到k的概率。</p><p>为了求出这两个东西，我们还需要一维状态，即玩家当前所处的位置。所以<code>pos[i][j][k][m]</code>表示i号玩家前j轮未曾走到k，走完第i轮后位于m的概率。</p><p>转移式很好写出来。于是我们得到了一个个复杂度<code>O(6*6*500*n^2)</code>的优秀算法, n为500， 爆了。</p><p>那么怎么优化这个东西呢？</p><p>突破口在于，pos数组的k只需要求前7块地就可以了。这样由pos的结果得到前7块地的first和never值，而后面8..n块地的first,never值可以直接由前面7块地的first,never值分别递推出来。因为每一轮掷骰子的概率是独立的，跟所处位置无关，j轮移动可以看成1+(j-1)轮，即走完第一轮再走j-1轮。例如，我们求<code>first[i][j][k]</code>, 可以枚举第一轮移动的步数t，贡献就是<code>p[i][t]*first[i][j-1][k-t]</code>. never同理。</p><p>于是我们得到了正解。</p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">502</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">double</span> p[<span class="number">6</span>][<span class="number">6</span>], first[<span class="number">6</span>][N][N], never[<span class="number">6</span>][N][N], pos[<span class="number">6</span>][N][<span class="number">7</span>][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">double</span> p[], <span class="keyword">double</span> first[N][N], <span class="keyword">double</span> never[N][N], <span class="keyword">double</span> pos[N][<span class="number">7</span>][N])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">6</span>; j++) pos[<span class="number">0</span>][j][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">500</span>; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">6</span>; j++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; k++) &#123;</span><br><span class="line">        never[i][j] += pos[i][j][k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> t = <span class="number">0</span>; t &lt; <span class="number">6</span>; t++) &#123;</span><br><span class="line">            <span class="keyword">int</span> nk = (k+t+<span class="number">1</span>)%n;</span><br><span class="line">            <span class="keyword">if</span> (nk == j) first[i+<span class="number">1</span>][j] += pos[i][j][k] * p[t];</span><br><span class="line">            <span class="keyword">else</span> pos[i+<span class="number">1</span>][j][nk] += pos[i][j][k] * p[t];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; k++) never[<span class="number">0</span>][k] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">500</span>; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">7</span>; j &lt; n; j++) </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> t = <span class="number">0</span>; t &lt; <span class="number">6</span>; t++) &#123;</span><br><span class="line">        first[i][j] += p[t] * first[i<span class="number">-1</span>][j-t<span class="number">-1</span>];</span><br><span class="line">        never[i][j] += p[t] * never[i<span class="number">-1</span>][j-t<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> ans[<span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">6</span>; j++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lf"</span>, &amp;p[i][j]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) solve(p[i], first[i], never[i], pos[i]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">500</span>; j++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; k++) &#123;</span><br><span class="line">        <span class="keyword">double</span> prob = first[i][j][k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> t = <span class="number">0</span>; t &lt; i; t++) prob *= never[t][j][k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> t = i+<span class="number">1</span>; t &lt; <span class="number">6</span>; t++) prob *= never[t][j<span class="number">-1</span>][k];</span><br><span class="line">        ans[i] += prob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) <span class="built_in">printf</span>(<span class="string">"%.3lf\n"</span>, ans[i]); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;H-命命命运&quot;&gt;&lt;a href=&quot;#H-命命命运&quot; class=&quot;headerlink&quot; title=&quot;H 命命命运&quot;&gt;&lt;/a&gt;H 命命命运&lt;/h1&gt;&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
+    
+    
+      <category term="DP" scheme="http://dafenghh.github.io/tags/DP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CCPC-Wannafly Winter Camp 2019 Day 3 题解</title>
+    <link href="http://dafenghh.github.io/post/5fc04022.html"/>
+    <id>http://dafenghh.github.io/post/5fc04022.html</id>
+    <published>2019-01-24T23:49:44.000Z</published>
+    <updated>2019-01-24T23:49:48.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CCPC-Wannafly Winter Camp 2019 Day 2 题解</title>
+    <link href="http://dafenghh.github.io/post/936a40bc.html"/>
+    <id>http://dafenghh.github.io/post/936a40bc.html</id>
+    <published>2019-01-24T23:48:22.000Z</published>
+    <updated>2019-01-24T23:48:24.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CCPC-Wannafly Winter Camp 2019 Day 1 题解</title>
+    <link href="http://dafenghh.github.io/post/1de5475f.html"/>
+    <id>http://dafenghh.github.io/post/1de5475f.html</id>
+    <published>2019-01-24T23:48:10.000Z</published>
+    <updated>2019-01-24T23:48:12.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Computer Networking, Chapter 4, THE NETWORK LAYER, Notes</title>
+    <link href="http://dafenghh.github.io/post/77b83dd5.html"/>
+    <id>http://dafenghh.github.io/post/77b83dd5.html</id>
+    <published>2018-11-06T02:27:49.000Z</published>
+    <updated>2018-11-06T07:36:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Forwarding involves the transfer of a packet from an incoming link to an outgoing link within a <em>single</em> router. </p><p>Routing involves <em>all</em> of a network’s routers, whose collective interactions via routing protocols determine the paths that packets take on their trips from source to destination node. </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Forwarding involves the transfer of a packet from an incoming link to an outgoing link within a &lt;em&gt;single&lt;/em&gt; router. &lt;/p&gt;
+&lt;p&gt;Routing i
+      
+    
+    </summary>
+    
+      <category term="Notes" scheme="http://dafenghh.github.io/categories/Notes/"/>
+    
+    
+      <category term="Computer Networking" scheme="http://dafenghh.github.io/tags/Computer-Networking/"/>
+    
+  </entry>
+  
+  <entry>
     <title>codeforces 1025G Company Acquisitions 题解</title>
     <link href="http://dafenghh.github.io/post/d05b63c9.html"/>
     <id>http://dafenghh.github.io/post/d05b63c9.html</id>
     <published>2018-09-11T09:07:52.000Z</published>
-    <updated>2018-09-11T09:24:44.000Z</updated>
+    <updated>2018-09-11T09:26:34.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h1><p>n家公司，每个公司有两种状态，独立或者附属于某一独立公司。每天发生这样一次操作：等概率选择两个独立公司A和B，等概率指定A吞并B,或者B吞并A。假设A吞并B，那么B就成为A的附属公司，然后原来附属B的公司全部独立。给定初始每个公司的状态，求期望多少天后，只有一家独立公司。<br><a id="more"></a></p><h1 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h1><p>超有意思的数学（构造）题……<br>一直在想DP做法，但这个状态没办法表示。所以要转化思路。<br>设一个有k个附属公司的独立公司的potential值为$2^k-1$，则可证明，一次操作后，potential和的增量的期望为1. 然后这就简单了，将终态和初始态的potential相减就行了。</p><h1 id="source-code"><a href="#source-code" class="headerlink" title="source code"></a>source code</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Mod = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="function">ll <span class="title">mod_pow</span><span class="params">(ll x, ll n)</span> </span>&#123;</span><br><span class="line">    ll res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; n &gt; <span class="number">0</span>; n &gt;&gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n &amp; <span class="number">1</span>) res = res * x % Mod;</span><br><span class="line">        x = x * x % Mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> cnt[<span class="number">600</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> &amp;a, ll b)</span> </span>&#123;</span><br><span class="line">    a = (a + b) % Mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    add(ans, mod_pow(<span class="number">2</span>, n - <span class="number">1</span>) - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</span><br><span class="line">        <span class="keyword">if</span> (x != <span class="number">-1</span>) ++cnt[x];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">1</span>; x &lt;= n; x++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (cnt[x] &gt; <span class="number">0</span>) add(ans, <span class="number">1</span> - mod_pow(<span class="number">2</span>, cnt[x]));</span><br><span class="line">    &#125;</span><br><span class="line">    add(ans, Mod);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -824,9 +917,9 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="math" scheme="http://dafenghh.github.io/tags/math/"/>
-    
       <category term="segment tree" scheme="http://dafenghh.github.io/tags/segment-tree/"/>
+    
+      <category term="math" scheme="http://dafenghh.github.io/tags/math/"/>
     
       <category term="geometry" scheme="http://dafenghh.github.io/tags/geometry/"/>
     
@@ -1138,9 +1231,9 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="graphs" scheme="http://dafenghh.github.io/tags/graphs/"/>
-    
       <category term="dp" scheme="http://dafenghh.github.io/tags/dp/"/>
+    
+      <category term="graphs" scheme="http://dafenghh.github.io/tags/graphs/"/>
     
       <category term="scc" scheme="http://dafenghh.github.io/tags/scc/"/>
     
@@ -1214,9 +1307,9 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="graphs" scheme="http://dafenghh.github.io/tags/graphs/"/>
-    
       <category term="binary search" scheme="http://dafenghh.github.io/tags/binary-search/"/>
+    
+      <category term="graphs" scheme="http://dafenghh.github.io/tags/graphs/"/>
     
   </entry>
   
