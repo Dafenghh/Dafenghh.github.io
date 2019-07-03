@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>系统分析与设计 Homework 3 | Dafenghh&#39;s Blog | To Be Top Coder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="homework">
+    <meta name="description" content="简答题简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点。 从项目特点、风险特征、人力资源利用角度思考  瀑布模型瀑布模型试图在编程之前详细定义所有或大部分需求，通常在编程之前创建出完整的设计，会试图在开始前定义“可靠的”计划或时间表，但往往事与愿违。 瀑布模型带来了高失败率，低生产率和高缺陷率。原因：软件开发的需求是时常变化的。变更对于软件项目来说是永恒的。计划很难是一成不变的，几乎不">
+<meta name="keywords" content="homework">
+<meta property="og:type" content="article">
+<meta property="og:title" content="系统分析与设计 Homework 3">
+<meta property="og:url" content="http://dafenghh.github.io/post/8b408f1.html">
+<meta property="og:site_name" content="Dafenghh&#39;s Blog">
+<meta property="og:description" content="简答题简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点。 从项目特点、风险特征、人力资源利用角度思考  瀑布模型瀑布模型试图在编程之前详细定义所有或大部分需求，通常在编程之前创建出完整的设计，会试图在开始前定义“可靠的”计划或时间表，但往往事与愿违。 瀑布模型带来了高失败率，低生产率和高缺陷率。原因：软件开发的需求是时常变化的。变更对于软件项目来说是永恒的。计划很难是一成不变的，几乎不">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-07-03T09:21:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="系统分析与设计 Homework 3">
+<meta name="twitter:description" content="简答题简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点。 从项目特点、风险特征、人力资源利用角度思考  瀑布模型瀑布模型试图在编程之前详细定义所有或大部分需求，通常在编程之前创建出完整的设计，会试图在开始前定义“可靠的”计划或时间表，但往往事与愿违。 瀑布模型带来了高失败率，低生产率和高缺陷率。原因：软件开发的需求是时常变化的。变更对于软件项目来说是永恒的。计划很难是一成不变的，几乎不">
+    
+        <link rel="alternate" type="application/atom+xml" title="Dafenghh&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/dafeng.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Dafenghh</h5>
+          <a href="mailto:xudafeng88@qq.com" title="xudafeng88@qq.com" class="mail">xudafeng88@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/dafenghh" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">系统分析与设计 Homework 3</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">系统分析与设计 Homework 3</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-03T08:37:16.000Z" itemprop="datePublished" class="page-time">
+  2019-07-03
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/SystemDesign/">SystemDesign</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#简答题"><span class="post-toc-number">1.</span> <span class="post-toc-text">简答题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点。"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#瀑布模型"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">瀑布模型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#增量模型"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">增量模型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#螺旋模型"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">螺旋模型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简述统一过程三大特点，与面向对象的方法有什么关系？"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">简述统一过程三大特点，与面向对象的方法有什么关系？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-系统分析与设计-Homework-3"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">系统分析与设计 Homework 3</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-03 16:37:16" datetime="2019-07-03T08:37:16.000Z"  itemprop="datePublished">2019-07-03</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/SystemDesign/">SystemDesign</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h1><h2 id="简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点。"><a href="#简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点。" class="headerlink" title="简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点。"></a>简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点。</h2><blockquote>
+<p>从项目特点、风险特征、人力资源利用角度思考</p>
+</blockquote>
+<h3 id="瀑布模型"><a href="#瀑布模型" class="headerlink" title="瀑布模型"></a>瀑布模型</h3><p>瀑布模型试图在编程之前详细定义所有或大部分需求，通常在编程之前创建出完整的设计，会试图在开始前定义“可靠的”计划或时间表，但往往事与愿违。</p>
+<p>瀑布模型带来了高失败率，低生产率和高缺陷率。原因：软件开发的需求是时常变化的。变更对于软件项目来说是永恒的。计划很难是一成不变的，几乎不可能在开始阶段就确立好详细计划。计划必须要随项目进行而动态修改，以适应新的需求和风险。</p>
+<h3 id="增量模型"><a href="#增量模型" class="headerlink" title="增量模型"></a>增量模型</h3><p>增量模型是把待开发的软件系统模块化，将每个模块作为一个增量组件，从而分批次地分析、设计、编码和测试这些增量组件。运用增量模型的软件开发过程是递增式的过程。相对于瀑布模型而言，采用增量模型进行开发，开发人员不需要一次性地把整个软件产品提交给用户，而是可以分批次进行提交。</p>
+<p>增量模型适用于具有以下特征的软件开发项目：</p>
+<ol>
+<li>软件产品可以分批次地进行交付。</li>
+<li>待开发的软件系统能够被模块化。</li>
+<li>软件开发人员对应用领域不熟悉，难以一次性地进行系统开发。</li>
+<li>项目管理人员把握全局的水平较高。</li>
+</ol>
+<p>增量模型对软件设计有更高的技术要求，特别是对软件体系结构，要求它具有很好的开放性与稳定性，能够顺利地实现构件的集成。增量构件要求具有相当好的功能独立性，其接口应该简单，以方便集成时与系统的连接。$[1]$</p>
+<h3 id="螺旋模型"><a href="#螺旋模型" class="headerlink" title="螺旋模型"></a>螺旋模型</h3><p>螺旋模型是一种演化软件开发过程模型，它兼顾了快速原型的迭代的特征以及瀑布模型的系统化与严格监控。螺旋模型最大的特点在于引入了其他模型不具备的风险分析，使软件在无法排除重大风险时有机会停止，以减小损失。同时，在每个迭代阶段构建原型是螺旋模型用以减小风险的途径。螺旋模型更适合大型的昂贵的系统级的软件应用。$[2]$</p>
+<h2 id="简述统一过程三大特点，与面向对象的方法有什么关系？"><a href="#简述统一过程三大特点，与面向对象的方法有什么关系？" class="headerlink" title="简述统一过程三大特点，与面向对象的方法有什么关系？"></a>简述统一过程三大特点，与面向对象的方法有什么关系？</h2><ol>
+<li>可伸缩性(scalable)：不需要使用统一过程的全部框架，只需要有用的部分。</li>
+<li>有效性(effective): 统一过程已被大量项目成功实践。</li>
+<li>用已有的实践方法提高生产效率(productivity)。</li>
+</ol>
+<h2 id="简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？"><a href="#简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？" class="headerlink" title="简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？"></a>简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？</h2><p>划分准则是达成里程碑的时间点。</p>
+<ol>
+<li><p>初始阶段<br>生命周期目标里程碑：评价项目基本的生存能力。</p>
+</li>
+<li><p>细化阶段<br>生命周期结构里程碑：为系统的结构简历管理基准并使得项目小组能够在构建阶段中进行衡量，需要检验详细的系统目标和范围、结构的选择以及主要风险的解决方案。</p>
+</li>
+<li><p>构造阶段<br>初始功能里程碑：决定产品是否可以在测试环境中进行部署，要确定软件、环境、用户是否可以开始系统的运作。</p>
+</li>
+<li><p>交付阶段<br>产品发布里程碑：确定目标是否实现，是否应该开始另一个开发周期。</p>
+</li>
+</ol>
+<h2 id="软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？"><a href="#软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？" class="headerlink" title="软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？"></a>软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？</h2><p>软件企业可以按固定节奏生产，固定周期发布软件产品，是因为软件企业有规范的管理体系和方法，了解软件的本质特征，能够很好地认识项目的工期、质量、范围、预算，遵循先做到再做好的原则，运用了正确的开发模型。</p>
+<p>它可以使得企业项目管理具有明确的阶段划分，由于每个阶段都会有显著的里程碑，使得每个迭代阶段都有明确的目标。这反逼项目管理确定合理的产品范围，不投入大量时间在冗余的工作中，从而提到团队生产效率。</p>
+<p>Reference:<br>1: <a href="https://baike.baidu.com/item/%E5%A2%9E%E9%87%8F%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">增量模型_百度百科</a><br>2: <a href="https://baike.baidu.com/item/%E8%9E%BA%E6%97%8B%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">螺旋模型_百度百科</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-03T09:21:36.000Z" itemprop="dateUpdated">2019-07-03 17:21:36</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://dafenghh.github.io">
+            <img src="/img/dafeng.jpg" alt="Dafenghh">
+            Dafenghh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/homework/">homework</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://dafenghh.github.io/post/8b408f1.html&title=《系统分析与设计 Homework 3》 — Dafenghh's Blog&pic=http://dafenghh.github.io/img/dafeng.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dafenghh.github.io/post/8b408f1.html&title=《系统分析与设计 Homework 3》 — Dafenghh's Blog&source=Turn what you want to do into a habit like brushing your teeth." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://dafenghh.github.io/post/8b408f1.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计 Homework 3》 — Dafenghh's Blog&url=http://dafenghh.github.io/post/8b408f1.html&via=http://dafenghh.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://dafenghh.github.io/post/8b408f1.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/post/956bf9e0.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Course Note: Software System Analysis and Design</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "8QX43Q8DoVC4wBF3qEXmx1ue-gzGzoHsz",
+            appKey: "waVFgUV7PtULmRX6XPfFarqo",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Dafenghh &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://dafenghh.github.io/post/8b408f1.html&title=《系统分析与设计 Homework 3》 — Dafenghh's Blog&pic=http://dafenghh.github.io/img/dafeng.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dafenghh.github.io/post/8b408f1.html&title=《系统分析与设计 Homework 3》 — Dafenghh's Blog&source=Turn what you want to do into a habit like brushing your teeth." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://dafenghh.github.io/post/8b408f1.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计 Homework 3》 — Dafenghh's Blog&url=http://dafenghh.github.io/post/8b408f1.html&via=http://dafenghh.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://dafenghh.github.io/post/8b408f1.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://dafenghh.github.io/post/8b408f1.html" alt="微信分享二维码">
+</div>
+
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Pending....';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Reading....';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
