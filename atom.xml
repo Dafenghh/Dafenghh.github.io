@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dafenghh.github.io/"/>
-  <updated>2019-07-03T03:59:56.000Z</updated>
+  <updated>2019-07-03T06:12:48.000Z</updated>
   <id>http://dafenghh.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Course Note: Software System Analysis and Design</title>
+    <link href="http://dafenghh.github.io/post/956bf9e0.html"/>
+    <id>http://dafenghh.github.io/post/956bf9e0.html</id>
+    <published>2019-07-03T04:22:05.000Z</published>
+    <updated>2019-07-03T06:12:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="intro"><a href="#intro" class="headerlink" title="intro"></a>intro</h1><h2 id="软件工程的定义"><a href="#软件工程的定义" class="headerlink" title="软件工程的定义"></a>软件工程的定义</h2><p>软件工程是：<br>(1) 将系统化的、规范的、可度量的方法应用于软件的开发、运行和维护，即将工程化方法应用于软件；<br>(2) 在(1)中所述方法的研究.</p><h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><blockquote><p>Analysis emphasizes an <strong>investigation</strong> of the problem and requirements, rather than a solution.</p></blockquote><h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><blockquote><p>Design emphasizes a <strong>conceptual solution</strong> (in software and hardware) that fulfils the requirements, rather than its implementation.</p></blockquote><h2 id="Object-oriented-analysis"><a href="#Object-oriented-analysis" class="headerlink" title="Object-oriented analysis"></a>Object-oriented analysis</h2><blockquote><p>Object-oriented analysis emphasizes on finding and describing the objects or concepts in the problem domain. </p></blockquote><h2 id="Object-oriented-design"><a href="#Object-oriented-design" class="headerlink" title="Object-oriented design"></a>Object-oriented design</h2><blockquote><p>Object-oriented design emphasizes on defining software objects and how they collaborate to fulfill the requirements. </p></blockquote><h2 id="Unified-Modeling-Language"><a href="#Unified-Modeling-Language" class="headerlink" title="Unified Modeling Language"></a>Unified Modeling Language</h2><blockquote><p>The UML is standard diagramming language to <strong>visualize</strong> the results of analysis and design.</p></blockquote><p>UML is not</p><ul><li>a process or methodology</li><li>object-oriented analysis and design</li><li>guidelines for design</li></ul><h1 id="过程模型"><a href="#过程模型" class="headerlink" title="过程模型"></a>过程模型</h1><h2 id="瀑布模型"><a href="#瀑布模型" class="headerlink" title="瀑布模型"></a>瀑布模型</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/img/system_design_notes/waterfall_model.png" alt="瀑布模型" title="">                </div>                <div class="image-caption">瀑布模型</div>            </figure><h2 id="统一过程"><a href="#统一过程" class="headerlink" title="统一过程"></a>统一过程</h2><blockquote><p>The Unified Process (UP) represents a mainstream approach for software development across the spectrum of project scales.</p></blockquote><ul><li>The process is <strong>scalable</strong>: you need not use the entire framework of the process for every project, only those that are effective.</li><li>The process is <strong>effective</strong>: it has been successfully employed on a large population of projects.</li><li>Improves <strong>productivity</strong> through use of practical methods that you’ve probably used already (but didn’t know it).</li><li>Iterative and incremental approach <em>allows start of work with incomplete, imperfect knowledge</em>.</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;intro&quot;&gt;&lt;a href=&quot;#intro&quot; class=&quot;headerlink&quot; title=&quot;intro&quot;&gt;&lt;/a&gt;intro&lt;/h1&gt;&lt;h2 id=&quot;软件工程的定义&quot;&gt;&lt;a href=&quot;#软件工程的定义&quot; class=&quot;headerlink&quot; title=
+      
+    
+    </summary>
+    
+      <category term="SystemDesign" scheme="http://dafenghh.github.io/categories/SystemDesign/"/>
+    
+    
+      <category term="Notes" scheme="http://dafenghh.github.io/tags/Notes/"/>
+    
+  </entry>
+  
+  <entry>
     <title>系统分析与设计 Homework 2</title>
     <link href="http://dafenghh.github.io/post/7fb33867.html"/>
     <id>http://dafenghh.github.io/post/7fb33867.html</id>
     <published>2019-04-03T03:59:59.000Z</published>
-    <updated>2019-07-03T03:59:56.000Z</updated>
+    <updated>2019-07-03T04:00:06.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h1><h2 id="用简短的语言给出对分析、设计的理解。"><a href="#用简短的语言给出对分析、设计的理解。" class="headerlink" title="用简短的语言给出对分析、设计的理解。"></a>用简短的语言给出对分析、设计的理解。</h2><p>分析是捕捉现实世界的业务的特性，描述处理的数据和处理数据的各种过程，得到软件需求。</p><p>设计是根据软件需求，对软件结构、功能进行规划、拆分，构建可实现的解决方案。</p><h2 id="用一句话描述面向对象的分析与设计的优势。"><a href="#用一句话描述面向对象的分析与设计的优势。" class="headerlink" title="用一句话描述面向对象的分析与设计的优势。"></a>用一句话描述面向对象的分析与设计的优势。</h2><p>对象的引入方便了在软件虚拟世界中模拟现实世界，面向对象方法带来更强的封装能力，有利于模块化开发。封装、抽象、继承和多态，提高了软件的可重用性、可维护性和可扩展性。</p><h2 id="简述-UML（统一建模语言）的作用。考试考哪些图？"><a href="#简述-UML（统一建模语言）的作用。考试考哪些图？" class="headerlink" title="简述 UML（统一建模语言）的作用。考试考哪些图？"></a>简述 UML（统一建模语言）的作用。考试考哪些图？</h2><ul><li>UML以图形作为表现形式，产生的模型清晰简洁，易于理解。</li><li>有利于开发人员与用户之间的沟通。</li><li>用UML进行系统建模得到的建模制品不仅仅包含各种模型框图，还有大量丰富的文档，这些文档给系统后期的维护工作带来了便捷。</li><li>用UML作为编程语言，使用UML完成软件系统的执行规范，可运行的代码就能够被自动生成。</li><li>用UML敏捷建模，与草图的功能类似，通过建立UML顺序图，能够提高开发的质量和速度。</li></ul><p>考试要考：</p><ul><li>用例图：(用户角度) 功能、执行者</li><li>静态图：系统静态结构<ul><li>类图：概念及关系</li><li>对象图：某种状态或时间段内，系统中活跃的对象及其关系</li><li>包图：描述系统的分解结构</li></ul></li><li>行为图：系统的动态行为<ul><li>交互图：描述对象间的消息传递<ul><li>顺序图：强调对象间消息发送的时序</li><li>合作图：强调对象间的动态写作关系</li></ul></li><li>状态图：对象的动态行为。状态 - 事件 - 状态迁移 - 响应动作</li><li>活动图：描述系统为完成某功能而执行的操作序列</li></ul></li><li>实现图：描述系统的组成和分布状况<ul><li>构件图：组成部件及其关系</li><li>部署图：物理体系结构及与软件单元的对应关系</li></ul></li></ul><h2 id="从软件本质的角度，解释软件范围（需求）控制的可行性"><a href="#从软件本质的角度，解释软件范围（需求）控制的可行性" class="headerlink" title="从软件本质的角度，解释软件范围（需求）控制的可行性"></a>从软件本质的角度，解释软件范围（需求）控制的可行性</h2><p>对需求进行限制，有利于需求更加清晰明确，降低管理成本。需求频繁变更会带来严重成本，限制需求范围可减少变更数量，使开发更有效率。</p><h1 id="项目管理实践"><a href="#项目管理实践" class="headerlink" title="项目管理实践"></a>项目管理实践</h1><h2 id="看板使用练习"><a href="#看板使用练习" class="headerlink" title="看板使用练习"></a>看板使用练习</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/img/system_design_homework/homework2/kanban.png" alt="看板练习" title="">                </div>                <div class="image-caption">看板练习</div>            </figure><h2 id="UML绘图工具练习"><a href="#UML绘图工具练习" class="headerlink" title="UML绘图工具练习"></a>UML绘图工具练习</h2><p>画系统顺序图，课本129页 P10-3<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/img/system_design_homework/homework2/system_sequence_diagram.png" alt="系统顺序图" title="">                </div>                <div class="image-caption">系统顺序图</div>            </figure></p>]]></content>
     
@@ -967,9 +992,9 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="segment tree" scheme="http://dafenghh.github.io/tags/segment-tree/"/>
-    
       <category term="math" scheme="http://dafenghh.github.io/tags/math/"/>
+    
+      <category term="segment tree" scheme="http://dafenghh.github.io/tags/segment-tree/"/>
     
       <category term="geometry" scheme="http://dafenghh.github.io/tags/geometry/"/>
     
@@ -1039,11 +1064,11 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="反转" scheme="http://dafenghh.github.io/tags/%E5%8F%8D%E8%BD%AC/"/>
-    
       <category term="brute force" scheme="http://dafenghh.github.io/tags/brute-force/"/>
     
       <category term="位运算" scheme="http://dafenghh.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+      <category term="反转" scheme="http://dafenghh.github.io/tags/%E5%8F%8D%E8%BD%AC/"/>
     
   </entry>
   
@@ -1208,9 +1233,9 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="区间处理" scheme="http://dafenghh.github.io/tags/%E5%8C%BA%E9%97%B4%E5%A4%84%E7%90%86/"/>
-    
       <category term="反转" scheme="http://dafenghh.github.io/tags/%E5%8F%8D%E8%BD%AC/"/>
+    
+      <category term="区间处理" scheme="http://dafenghh.github.io/tags/%E5%8C%BA%E9%97%B4%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
