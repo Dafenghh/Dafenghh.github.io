@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>系统分析与设计 Homework 2 | Dafenghh&#39;s Blog | To Be Top Coder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="homework">
+    <meta name="description" content="简答题用简短的语言给出对分析、设计的理解。分析是捕捉现实世界的业务的特性，描述处理的数据和处理数据的各种过程，得到软件需求。 设计是根据软件需求，对软件结构、功能进行规划、拆分，构建可实现的解决方案。 用一句话描述面向对象的分析与设计的优势。对象的引入方便了在软件虚拟世界中模拟现实世界，面向对象方法带来更强的封装能力，有利于模块化开发。封装、抽象、继承和多态，提高了软件的可重用性、可维护性和可扩展">
+<meta name="keywords" content="homework">
+<meta property="og:type" content="article">
+<meta property="og:title" content="系统分析与设计 Homework 2">
+<meta property="og:url" content="http://dafenghh.github.io/post/7fb33867.html">
+<meta property="og:site_name" content="Dafenghh&#39;s Blog">
+<meta property="og:description" content="简答题用简短的语言给出对分析、设计的理解。分析是捕捉现实世界的业务的特性，描述处理的数据和处理数据的各种过程，得到软件需求。 设计是根据软件需求，对软件结构、功能进行规划、拆分，构建可实现的解决方案。 用一句话描述面向对象的分析与设计的优势。对象的引入方便了在软件虚拟世界中模拟现实世界，面向对象方法带来更强的封装能力，有利于模块化开发。封装、抽象、继承和多态，提高了软件的可重用性、可维护性和可扩展">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://dafenghh.github.io/img/system_design_homework/homework2/kanban.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/system_design_homework/homework2/system_sequence_diagram.png">
+<meta property="og:updated_time" content="2019-07-03T03:59:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="系统分析与设计 Homework 2">
+<meta name="twitter:description" content="简答题用简短的语言给出对分析、设计的理解。分析是捕捉现实世界的业务的特性，描述处理的数据和处理数据的各种过程，得到软件需求。 设计是根据软件需求，对软件结构、功能进行规划、拆分，构建可实现的解决方案。 用一句话描述面向对象的分析与设计的优势。对象的引入方便了在软件虚拟世界中模拟现实世界，面向对象方法带来更强的封装能力，有利于模块化开发。封装、抽象、继承和多态，提高了软件的可重用性、可维护性和可扩展">
+<meta name="twitter:image" content="http://dafenghh.github.io/img/system_design_homework/homework2/kanban.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Dafenghh&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/dafeng.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Dafenghh</h5>
+          <a href="mailto:xudafeng88@qq.com" title="xudafeng88@qq.com" class="mail">xudafeng88@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/dafenghh" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">系统分析与设计 Homework 2</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">系统分析与设计 Homework 2</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-03T03:59:59.000Z" itemprop="datePublished" class="page-time">
+  2019-04-03
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/SystemDesign/">SystemDesign</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#简答题"><span class="post-toc-number">1.</span> <span class="post-toc-text">简答题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用简短的语言给出对分析、设计的理解。"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">用简短的语言给出对分析、设计的理解。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用一句话描述面向对象的分析与设计的优势。"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">用一句话描述面向对象的分析与设计的优势。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简述-UML（统一建模语言）的作用。考试考哪些图？"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">简述 UML（统一建模语言）的作用。考试考哪些图？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从软件本质的角度，解释软件范围（需求）控制的可行性"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">从软件本质的角度，解释软件范围（需求）控制的可行性</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#项目管理实践"><span class="post-toc-number">2.</span> <span class="post-toc-text">项目管理实践</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#看板使用练习"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">看板使用练习</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UML绘图工具练习"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">UML绘图工具练习</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-系统分析与设计-Homework-2"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">系统分析与设计 Homework 2</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-03 11:59:59" datetime="2019-04-03T03:59:59.000Z"  itemprop="datePublished">2019-04-03</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/SystemDesign/">SystemDesign</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h1><h2 id="用简短的语言给出对分析、设计的理解。"><a href="#用简短的语言给出对分析、设计的理解。" class="headerlink" title="用简短的语言给出对分析、设计的理解。"></a>用简短的语言给出对分析、设计的理解。</h2><p>分析是捕捉现实世界的业务的特性，描述处理的数据和处理数据的各种过程，得到软件需求。</p>
+<p>设计是根据软件需求，对软件结构、功能进行规划、拆分，构建可实现的解决方案。</p>
+<h2 id="用一句话描述面向对象的分析与设计的优势。"><a href="#用一句话描述面向对象的分析与设计的优势。" class="headerlink" title="用一句话描述面向对象的分析与设计的优势。"></a>用一句话描述面向对象的分析与设计的优势。</h2><p>对象的引入方便了在软件虚拟世界中模拟现实世界，面向对象方法带来更强的封装能力，有利于模块化开发。封装、抽象、继承和多态，提高了软件的可重用性、可维护性和可扩展性。</p>
+<h2 id="简述-UML（统一建模语言）的作用。考试考哪些图？"><a href="#简述-UML（统一建模语言）的作用。考试考哪些图？" class="headerlink" title="简述 UML（统一建模语言）的作用。考试考哪些图？"></a>简述 UML（统一建模语言）的作用。考试考哪些图？</h2><ul>
+<li>UML以图形作为表现形式，产生的模型清晰简洁，易于理解。</li>
+<li>有利于开发人员与用户之间的沟通。</li>
+<li>用UML进行系统建模得到的建模制品不仅仅包含各种模型框图，还有大量丰富的文档，这些文档给系统后期的维护工作带来了便捷。</li>
+<li>用UML作为编程语言，使用UML完成软件系统的执行规范，可运行的代码就能够被自动生成。</li>
+<li>用UML敏捷建模，与草图的功能类似，通过建立UML顺序图，能够提高开发的质量和速度。</li>
+</ul>
+<p>考试要考：</p>
+<ul>
+<li>用例图：(用户角度) 功能、执行者</li>
+<li>静态图：系统静态结构<ul>
+<li>类图：概念及关系</li>
+<li>对象图：某种状态或时间段内，系统中活跃的对象及其关系</li>
+<li>包图：描述系统的分解结构</li>
+</ul>
+</li>
+<li>行为图：系统的动态行为<ul>
+<li>交互图：描述对象间的消息传递<ul>
+<li>顺序图：强调对象间消息发送的时序</li>
+<li>合作图：强调对象间的动态写作关系</li>
+</ul>
+</li>
+<li>状态图：对象的动态行为。状态 - 事件 - 状态迁移 - 响应动作</li>
+<li>活动图：描述系统为完成某功能而执行的操作序列</li>
+</ul>
+</li>
+<li>实现图：描述系统的组成和分布状况<ul>
+<li>构件图：组成部件及其关系</li>
+<li>部署图：物理体系结构及与软件单元的对应关系</li>
+</ul>
+</li>
+</ul>
+<h2 id="从软件本质的角度，解释软件范围（需求）控制的可行性"><a href="#从软件本质的角度，解释软件范围（需求）控制的可行性" class="headerlink" title="从软件本质的角度，解释软件范围（需求）控制的可行性"></a>从软件本质的角度，解释软件范围（需求）控制的可行性</h2><p>对需求进行限制，有利于需求更加清晰明确，降低管理成本。需求频繁变更会带来严重成本，限制需求范围可减少变更数量，使开发更有效率。</p>
+<h1 id="项目管理实践"><a href="#项目管理实践" class="headerlink" title="项目管理实践"></a>项目管理实践</h1><h2 id="看板使用练习"><a href="#看板使用练习" class="headerlink" title="看板使用练习"></a>看板使用练习</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/system_design_homework/homework2/kanban.png" alt="看板练习" title="">
+                </div>
+                <div class="image-caption">看板练习</div>
+            </figure>
+<h2 id="UML绘图工具练习"><a href="#UML绘图工具练习" class="headerlink" title="UML绘图工具练习"></a>UML绘图工具练习</h2><p>画系统顺序图，课本129页 P10-3<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/system_design_homework/homework2/system_sequence_diagram.png" alt="系统顺序图" title="">
+                </div>
+                <div class="image-caption">系统顺序图</div>
+            </figure></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-03T03:59:56.000Z" itemprop="dateUpdated">2019-07-03 11:59:56</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://dafenghh.github.io">
+            <img src="/img/dafeng.jpg" alt="Dafenghh">
+            Dafenghh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/homework/">homework</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://dafenghh.github.io/post/7fb33867.html&title=《系统分析与设计 Homework 2》 — Dafenghh's Blog&pic=http://dafenghh.github.io/img/dafeng.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dafenghh.github.io/post/7fb33867.html&title=《系统分析与设计 Homework 2》 — Dafenghh's Blog&source=Turn what you want to do into a habit like brushing your teeth." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://dafenghh.github.io/post/7fb33867.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计 Homework 2》 — Dafenghh's Blog&url=http://dafenghh.github.io/post/7fb33867.html&via=http://dafenghh.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://dafenghh.github.io/post/7fb33867.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/post/e6ba69dd.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">系统分析与设计 Homework 1</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "8QX43Q8DoVC4wBF3qEXmx1ue-gzGzoHsz",
+            appKey: "waVFgUV7PtULmRX6XPfFarqo",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Dafenghh &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://dafenghh.github.io/post/7fb33867.html&title=《系统分析与设计 Homework 2》 — Dafenghh's Blog&pic=http://dafenghh.github.io/img/dafeng.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dafenghh.github.io/post/7fb33867.html&title=《系统分析与设计 Homework 2》 — Dafenghh's Blog&source=Turn what you want to do into a habit like brushing your teeth." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://dafenghh.github.io/post/7fb33867.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计 Homework 2》 — Dafenghh's Blog&url=http://dafenghh.github.io/post/7fb33867.html&via=http://dafenghh.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://dafenghh.github.io/post/7fb33867.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://dafenghh.github.io/post/7fb33867.html" alt="微信分享二维码">
+</div>
+
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Pending....';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Reading....';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
