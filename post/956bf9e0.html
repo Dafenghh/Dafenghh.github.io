@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://dafenghh.github.io/img/system_design_notes/waterfall_model.png">
 <meta property="og:image" content="http://dafenghh.github.io/img/system_design_notes/rup_process_model.png">
 <meta property="og:image" content="http://dafenghh.github.io/img/system_design_notes/uml_activity.png">
-<meta property="og:updated_time" content="2019-07-04T02:44:56.000Z">
+<meta property="og:updated_time" content="2019-07-04T09:27:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Course Note: Software System Analysis and Design">
 <meta name="twitter:description" content="intro软件工程的定义软件工程是：(1) 将系统化的、规范的、可度量的方法应用于软件的开发、运行和维护，即将工程化方法应用于软件；(2) 在(1)中所述方法的研究. Analysis Analysis emphasizes an investigation of the problem and requirements, rather than a solution.  Design Desig">
@@ -164,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#intro"><span class="post-toc-number">1.</span> <span class="post-toc-text">intro</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#软件工程的定义"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">软件工程的定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Analysis"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Design"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Design</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-oriented-analysis"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Object-oriented analysis</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-oriented-design"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Object-oriented design</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Unified-Modeling-Language"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Unified Modeling Language</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#过程模型"><span class="post-toc-number">2.</span> <span class="post-toc-text">过程模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#瀑布模型"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">瀑布模型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#统一过程"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">统一过程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Unified-Process-Workflows"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Unified Process Workflows</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Use-Case-Driven"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Use Case Driven</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Architecture-Centric"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">Architecture Centric</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Iterative-and-Evolutionary"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">Iterative and Evolutionary</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UP-Phases"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">UP Phases</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Inception"><span class="post-toc-number">3.</span> <span class="post-toc-text">Inception</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Evolutionary-Requirement"><span class="post-toc-number">4.</span> <span class="post-toc-text">Evolutionary Requirement</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Use-Case"><span class="post-toc-number">5.</span> <span class="post-toc-text">Use Case</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Actors"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Actors</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用例模板"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">用例模板</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Guideline-to-Write-Use-Case"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">Guideline to Write Use Case</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Find-Actors-and-Goals-Event-Analysis"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">Find Actors and Goals: Event Analysis</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#识别用例准则"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">识别用例准则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UML-活动图"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">UML 活动图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#业务流程（BP）与业务流程重构（BPR）"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">业务流程（BP）与业务流程重构（BPR）</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#intro"><span class="post-toc-number">1.</span> <span class="post-toc-text">intro</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#软件工程的定义"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">软件工程的定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Analysis"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Design"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Design</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-oriented-analysis"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Object-oriented analysis</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-oriented-design"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Object-oriented design</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Unified-Modeling-Language"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Unified Modeling Language</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#过程模型"><span class="post-toc-number">2.</span> <span class="post-toc-text">过程模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#瀑布模型"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">瀑布模型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#统一过程"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">统一过程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Unified-Process-Workflows"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Unified Process Workflows</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Use-Case-Driven"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Use Case Driven</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Architecture-Centric"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">Architecture Centric</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Iterative-and-Evolutionary"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">Iterative and Evolutionary</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UP-Phases"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">UP Phases</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Inception"><span class="post-toc-number">3.</span> <span class="post-toc-text">Inception</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Evolutionary-Requirement"><span class="post-toc-number">4.</span> <span class="post-toc-text">Evolutionary Requirement</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Use-Case"><span class="post-toc-number">5.</span> <span class="post-toc-text">Use Case</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Actors"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Actors</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用例模板"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">用例模板</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Guideline-to-Write-Use-Case"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">Guideline to Write Use Case</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Find-Actors-and-Goals-Event-Analysis"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">Find Actors and Goals: Event Analysis</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#识别用例准则"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">识别用例准则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UML-活动图"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">UML 活动图</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Domain-Model"><span class="post-toc-number">6.</span> <span class="post-toc-text">Domain Model</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Guideline-Find-Conceptual-Classes"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">Guideline: Find Conceptual Classes</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#A-Common-Mistake-with-Attributes-vs-Classes"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">A Common Mistake with Attributes vs. Classes</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#When-to-Model-with-‘Description’-Classes"><span class="post-toc-number">6.1.2.</span> <span class="post-toc-text">When to Model with ‘Description’ Classes</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Association"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">Association</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Attribute"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">Attribute</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导出属性"><span class="post-toc-number">6.3.1.</span> <span class="post-toc-text">导出属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#准则：任何属性都不表示外键"><span class="post-toc-number">6.3.2.</span> <span class="post-toc-text">准则：任何属性都不表示外键</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#准则：对数量和单位建模"><span class="post-toc-number">6.3.3.</span> <span class="post-toc-text">准则：对数量和单位建模</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#状态模型"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">状态模型</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -373,7 +373,61 @@
                 </div>
                 <div class="image-caption">UML activicy</div>
             </figure>
-<h2 id="业务流程（BP）与业务流程重构（BPR）"><a href="#业务流程（BP）与业务流程重构（BPR）" class="headerlink" title="业务流程（BP）与业务流程重构（BPR）"></a>业务流程（BP）与业务流程重构（BPR）</h2>
+<h1 id="Domain-Model"><a href="#Domain-Model" class="headerlink" title="Domain Model"></a>Domain Model</h1><p>领域模型表示真实世界概念类。</p>
+<p>Provides a conceptual perspective: </p>
+<ul>
+<li>domain objects or conceptual classes</li>
+<li>associations between conceptual classes</li>
+<li>attributes of conceptual classes</li>
+</ul>
+<h2 id="Guideline-Find-Conceptual-Classes"><a href="#Guideline-Find-Conceptual-Classes" class="headerlink" title="Guideline: Find Conceptual Classes"></a>Guideline: Find Conceptual Classes</h2><ul>
+<li>Identify noun phrases.<ul>
+<li>Identify the <strong>nouns and noun phrases</strong> in textual descriptions of a domain, and consider them as candidate conceptual classes or attributes</li>
+<li>Some of these noun phrases may refer to conceptual classes that are ignored in this iteration (e.g., “Accounting” and “commissions”), and some may be simply attributes of conceptual classes.</li>
+<li>A weakness of this approach is the imprecision of natural language; different noun phrases may represent the same conceptual class or attribute, among other ambiguities.</li>
+</ul>
+</li>
+</ul>
+<h3 id="A-Common-Mistake-with-Attributes-vs-Classes"><a href="#A-Common-Mistake-with-Attributes-vs-Classes" class="headerlink" title="A Common Mistake with Attributes vs. Classes"></a>A Common Mistake with Attributes vs. Classes</h3><blockquote>
+<p>If we do not think of some conceptual class X as a number or text in the real world, X is probably a conceptual class, not an attribute.</p>
+</blockquote>
+<h3 id="When-to-Model-with-‘Description’-Classes"><a href="#When-to-Model-with-‘Description’-Classes" class="headerlink" title="When to Model with ‘Description’ Classes"></a>When to Model with ‘Description’ Classes</h3><p>何时需要描述类：</p>
+<ul>
+<li>需要有关商品或服务的描述，独立于任何商品或服务的现有实例。</li>
+<li>避免删除所有示例后，原有的商品描述信息丢失。</li>
+<li>减少冗余或重复信息。</li>
+</ul>
+<h2 id="Association"><a href="#Association" class="headerlink" title="Association"></a>Association</h2><ul>
+<li>A is a part of B</li>
+<li>A contains B</li>
+<li>A descibes B</li>
+<li>A is logged/recorded/reported/captured in B</li>
+<li>A is a member of B</li>
+<li>A is a subunit of B</li>
+<li>A uses or manages or owns B</li>
+</ul>
+<h2 id="Attribute"><a href="#Attribute" class="headerlink" title="Attribute"></a>Attribute</h2><h3 id="导出属性"><a href="#导出属性" class="headerlink" title="导出属性"></a>导出属性</h3><p>在属性名称前加’/‘</p>
+<h3 id="准则：任何属性都不表示外键"><a href="#准则：任何属性都不表示外键" class="headerlink" title="准则：任何属性都不表示外键"></a>准则：任何属性都不表示外键</h3><p>领域模型中，不能将外键作为属性，应当使用关联。</p>
+<h3 id="准则：对数量和单位建模"><a href="#准则：对数量和单位建模" class="headerlink" title="准则：对数量和单位建模"></a>准则：对数量和单位建模</h3><p>大部分用数字表示的数量不应该表示为纯数字，应该加上单位。</p>
+<h2 id="状态模型"><a href="#状态模型" class="headerlink" title="状态模型"></a>状态模型</h2><blockquote>
+<p>状态图描述一个 事物或对象 受 事件或消息 刺激产生 可见的状态（属性/属性组合） 的数据变化。</p>
+</blockquote>
+<ul>
+<li>基础符号<ul>
+<li>起始状态（Initial）</li>
+<li>终止状态（Final）</li>
+<li>取消/对象取消（Termination）</li>
+<li>状态（State）</li>
+<li>变迁（Transform），含条件（Condition）、事件（Event）和事件处理动作（Action/Handler）</li>
+</ul>
+</li>
+<li>扩展符号<ul>
+<li>复合状态</li>
+<li>信号</li>
+</ul>
+</li>
+</ul>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -381,7 +435,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-07-04T02:44:56.000Z" itemprop="dateUpdated">2019-07-04 10:44:56</time>
+    Last updated: <time datetime="2019-07-04T09:27:28.000Z" itemprop="dateUpdated">2019-07-04 17:27:28</time>
 </span><br>
 
 
