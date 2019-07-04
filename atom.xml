@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dafenghh.github.io/"/>
-  <updated>2019-07-04T09:27:28.000Z</updated>
+  <updated>2019-07-04T13:29:44.000Z</updated>
   <id>http://dafenghh.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>系统分析与设计 Homework 6</title>
+    <link href="http://dafenghh.github.io/post/78defc7e.html"/>
+    <id>http://dafenghh.github.io/post/78defc7e.html</id>
+    <published>2019-07-04T12:24:50.000Z</published>
+    <updated>2019-07-04T13:29:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="使用-UMLet-建模"><a href="#使用-UMLet-建模" class="headerlink" title="使用 UMLet 建模"></a>使用 UMLet 建模</h1><h2 id="使用类图，分别对-Asg-RH-文档中-Make-Reservation-用例以及-Payment-用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键"><a href="#使用类图，分别对-Asg-RH-文档中-Make-Reservation-用例以及-Payment-用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键" class="headerlink" title="使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键"></a>使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键</h2><blockquote><p>注意事项：<br>对象必须是名词、特别是技术名词、报表、描述类的处理；<br>关联必须有多重性、部分有名称与导航方向<br>属性要注意计算字段<br>数据建模，为了简化描述仅需要给出表清单，例如：<br>Hotel（ID/Key，Name，LoctionID/Fkey，Address…..）</p></blockquote><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/img/system_design_homework/homework6/hotel_domain.png" alt="Make Reservation" title="">                </div>                <div class="image-caption">Make Reservation</div>            </figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Hotel(hotelID/key, address)</span><br><span class="line">RoomCatalog(catalogID/key, hotelID/Fkey)</span><br><span class="line">RoomDescription(descriptionID/key, catalogID/Fkey, price, type, address)</span><br><span class="line">Room(roomID/key, date, descriptionID/Fkey, availability)</span><br><span class="line">ReservationLineItem(roomID/Fkey, reservationID/Fkey, adultCount, childCount)</span><br><span class="line">Reservation(revervationID/key, customerID/Fkey)</span><br><span class="line">Customer(name, customerID/key)</span><br></pre></td></tr></table></figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/img/system_design_homework/homework6/payment_domain.png" alt="Payment" title="">                </div>                <div class="image-caption">Payment</div>            </figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Customer(name, customerID/key)</span><br><span class="line">Card(cardID/key, customerID/Fkey, bank, number)</span><br><span class="line">Payment(paymentID/key, customerID/Fkey, cardID/Fkey, totalCost)</span><br><span class="line">Item(itemID/key, paymentID/Fkey, details)</span><br></pre></td></tr></table></figure><h2 id="使用-UML-State-Model，对每个订单对象生命周期建模"><a href="#使用-UML-State-Model，对每个订单对象生命周期建模" class="headerlink" title="使用 UML State Model，对每个订单对象生命周期建模"></a>使用 UML State Model，对每个订单对象生命周期建模</h2><blockquote><p>建模对象： 参考 Asg_RH 文档， 对 Reservation/Order 对象建模。<br>建模要求： 参考练习不能提供足够信息帮助你对订单对象建模，请参考现在 定旅馆 的旅游网站，尽可能分析围绕订单发生的各种情况，直到订单通过销售事件（柜台销售）结束订单。</p></blockquote><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/img/system_design_homework/homework6/hotel_states.png" alt="State Model" title="">                </div>                <div class="image-caption">State Model</div>            </figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;使用-UMLet-建模&quot;&gt;&lt;a href=&quot;#使用-UMLet-建模&quot; class=&quot;headerlink&quot; title=&quot;使用 UMLet 建模&quot;&gt;&lt;/a&gt;使用 UMLet 建模&lt;/h1&gt;&lt;h2 id=&quot;使用类图，分别对-Asg-RH-文档中-Make-Rese
+      
+    
+    </summary>
+    
+      <category term="SystemDesign" scheme="http://dafenghh.github.io/categories/SystemDesign/"/>
+    
+    
+      <category term="homework" scheme="http://dafenghh.github.io/tags/homework/"/>
+    
+  </entry>
   
   <entry>
     <title>Course Note: Software System Analysis and Design</title>
@@ -1139,11 +1164,11 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
+      <category term="反转" scheme="http://dafenghh.github.io/tags/%E5%8F%8D%E8%BD%AC/"/>
+    
       <category term="brute force" scheme="http://dafenghh.github.io/tags/brute-force/"/>
     
       <category term="位运算" scheme="http://dafenghh.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
-    
-      <category term="反转" scheme="http://dafenghh.github.io/tags/%E5%8F%8D%E8%BD%AC/"/>
     
   </entry>
   
@@ -1308,9 +1333,9 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="反转" scheme="http://dafenghh.github.io/tags/%E5%8F%8D%E8%BD%AC/"/>
-    
       <category term="区间处理" scheme="http://dafenghh.github.io/tags/%E5%8C%BA%E9%97%B4%E5%A4%84%E7%90%86/"/>
+    
+      <category term="反转" scheme="http://dafenghh.github.io/tags/%E5%8F%8D%E8%BD%AC/"/>
     
   </entry>
   
@@ -1357,9 +1382,9 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="binary search" scheme="http://dafenghh.github.io/tags/binary-search/"/>
-    
       <category term="math" scheme="http://dafenghh.github.io/tags/math/"/>
+    
+      <category term="binary search" scheme="http://dafenghh.github.io/tags/binary-search/"/>
     
   </entry>
   
@@ -1457,9 +1482,9 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="binary search" scheme="http://dafenghh.github.io/tags/binary-search/"/>
-    
       <category term="graphs" scheme="http://dafenghh.github.io/tags/graphs/"/>
+    
+      <category term="binary search" scheme="http://dafenghh.github.io/tags/binary-search/"/>
     
   </entry>
   
