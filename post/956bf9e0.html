@@ -35,13 +35,13 @@
 <meta property="og:image" content="http://dafenghh.github.io/img/system_design_notes/states_notation.png">
 <meta property="og:image" content="http://dafenghh.github.io/img/system_design_notes/uml_act.png">
 <meta property="og:image" content="http://dafenghh.github.io/img/system_design_notes/uml_state.png">
-<meta property="og:image" content="https://images0.cnblogs.com/blog2015/775886/201506/291449320562651.png">
-<meta property="og:image" content="https://images0.cnblogs.com/blog2015/775886/201506/300357370715713.png">
-<meta property="og:image" content="https://images0.cnblogs.com/blog2015/775886/201506/301101262903244.png">
-<meta property="og:image" content="https://images0.cnblogs.com/blog2015/775886/201506/301345468846809.png">
-<meta property="og:image" content="https://images0.cnblogs.com/blog2015/775886/201506/302020184464448.png">
-<meta property="og:image" content="https://images0.cnblogs.com/blog2015/775886/201506/302304063067381.png">
-<meta property="og:updated_time" content="2019-07-04T16:43:12.000Z">
+<meta property="og:image" content="http://dafenghh.github.io/img/system_design_notes/domain.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/system_design_notes/uml_state.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/system_design_notes/pack.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/system_design_notes/sequence.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/system_design_notes/dcd.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/system_design_notes/deploy.png">
+<meta property="og:updated_time" content="2019-07-04T16:51:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Course Note: Software System Analysis and Design">
 <meta name="twitter:description" content="intro软件工程的定义软件工程是：(1) 将系统化的、规范的、可度量的方法应用于软件的开发、运行和维护，即将工程化方法应用于软件；(2) 在(1)中所述方法的研究. Analysis Analysis emphasizes an investigation of the problem and requirements, rather than a solution.  Design Desig">
@@ -589,7 +589,7 @@
 <pre><code>9、 没有描述类一定会扣分！
 
 整个画图的最重要步骤就是找出名词！
-</code></pre><p><img src="https://images0.cnblogs.com/blog2015/775886/201506/291449320562651.png" alt="领域模型"></p>
+</code></pre><p><img src="/img/system_design_notes/domain.png" alt="领域模型"></p>
 <h2 id="系统顺序图"><a href="#系统顺序图" class="headerlink" title="系统顺序图"></a>系统顺序图</h2><h3 id="重要概念-2"><a href="#重要概念-2" class="headerlink" title="重要概念"></a>重要概念</h3><p>1.对象：</p>
 <p>　　对象是特定行为与属性的集合。</p>
 <p>　　对象的表示方式有三种：</p>
@@ -647,7 +647,7 @@
 <p>　　　  这是整个画图考试唯一需要文字的地方</p>
 <p>　　7、操作契约：</p>
 <p>　　　  操作、交叉引用（用例）、前置条件、后置条件　　</p>
-<p> <img src="https://images0.cnblogs.com/blog2015/775886/201506/300357370715713.png" alt="系统顺序图"></p>
+<p> <img src="/img/system_design_notes/uml_state.png" alt="系统顺序图"></p>
 <h2 id="包图"><a href="#包图" class="headerlink" title="包图"></a>包图</h2><ol>
 <li><p>包图的M里面的元素全都来自领域模型里面。</p>
 </li>
@@ -661,7 +661,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://images0.cnblogs.com/blog2015/775886/201506/301101262903244.png" alt="包图" title="">
+                    <img src="/img/system_design_notes/pack.png" alt="包图" title="">
                 </div>
                 <div class="image-caption">包图</div>
             </figure>
@@ -688,7 +688,7 @@
 <p>　　7.控制器左边的对象一定是UI的对象</p>
 <p>　　8.控制器中的方法应是在顺序图和交互图中保持一致</p>
 <p>　　9.本题重点是围绕单词，故方法都直接连到单词</p>
-<p><img src="https://images0.cnblogs.com/blog2015/775886/201506/301345468846809.png" alt="顺序图"></p>
+<p><img src="/img/system_design_notes/sequence.png" alt="顺序图"></p>
 <h2 id="设计类图"><a href="#设计类图" class="headerlink" title="设计类图"></a>设计类图</h2><p>重要概念：</p>
 <ol>
 <li><p>类图（Class Diagram）: 类图是面向对象系统建模中最常用和最重要的图，是定义其它图的基础。类图主要是用来显示系统中的类、接口以及它们之间的静态结构和关系的一种静态模型。UML用类图表示类、接口及其关联。</p>
@@ -751,7 +751,7 @@
 <p>　　4.领域模型==》概念透视图</p>
 <p>　　　设计模型（DCD）==》软件透视图</p>
 <p> <a href="https://www.cnblogs.com/xiaolongbao-lzh/p/4611490.html" target="_blank" rel="noopener">设计类图</a></p>
-<p> <img src="https://images0.cnblogs.com/blog2015/775886/201506/302020184464448.png" alt="设计类图"></p>
+<p> <img src="/img/system_design_notes/dcd.png" alt="设计类图"></p>
 <h2 id="部署图"><a href="#部署图" class="headerlink" title="部署图"></a>部署图</h2><p> 重要概念：</p>
 <p>　　1. 部署图</p>
 <p>　　　部署图表示的是，如何将具体的软件制品（例如可执行文件）分配到计算节点（具有处理服务的某种事物）上。部署图表示了软件元素在物理架构上的部署，以及物理元素之间的通信（通常通过网络进行）。</p>
@@ -783,7 +783,7 @@
 <p>　　　根据图中所给的信息，将部署图对应画出来就可以了。</p>
 <p>　　2.操作系统等信息在节点中表示为{OS=XXXX}</p>
 <p>　　3.数据库与其他的通信协议为JDBC。 </p>
-<p><img src="https://images0.cnblogs.com/blog2015/775886/201506/302304063067381.png" alt="部署图"></p>
+<p><img src="/img/system_design_notes/deploy.png" alt="部署图"></p>
 
         </div>
 
@@ -792,7 +792,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-07-04T16:43:12.000Z" itemprop="dateUpdated">2019-07-05 00:43:12</time>
+    Last updated: <time datetime="2019-07-04T16:51:24.000Z" itemprop="dateUpdated">2019-07-05 00:51:24</time>
 </span><br>
 
 
