@@ -48,7 +48,25 @@
 <meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_4/neighbour.png">
 <meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_4/distribution.png">
 <meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_4/d_calculation.png">
-<meta property="og:updated_time" content="2019-07-06T03:21:16.000Z">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_4/interfere.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_4/switch.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_4/erlang.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_4/erlang_b.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_5/aerial.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_5/aerial2.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_5/area.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_5/E_H.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_5/aerial3.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_5/double_aerial.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_5/summary.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_5/fresnel.png">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?r_{1max}=\frac{1}{2}\sqrt{\lambda&space;d}">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_5/exp.png">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?%5Coverline%7BPL%7D%28d%29_%7BdB%7D%3D%5Coverline%7BPL%7D%28d_0%29_%7BdB%7D+10nlg%28%5Cfrac%7Bd%7D%7Bd_0%7D%29%2Cd%3Ed_0">
+<meta property="og:image" content="https://latex.codecogs.com/gif.latex?PL%28d%29%5BdB%5D%3D%5Coverline%7BPL%7D%28d%29%5BdB%5D+X_%7B%5Csigma%7D%5BdB%5D%3D%5Coverline%7BPL%7D%28d_0%29%5BdB%5D+10nlg%28%5Cfrac%7Bd%7D%7Bd_0%7D%29+X_%7B%5Csigma%7D%5BdB%5D%2C%20d%3Ed_0">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_5/receive.png">
+<meta property="og:image" content="http://dafenghh.github.io/img/wireless_communications_notes/lecture_5/outage.png">
+<meta property="og:updated_time" content="2019-07-06T14:50:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Course Note: Wireless Communications">
 <meta name="twitter:description" content="绪论香农信道容量定理及其应用功率可以无限止地换取带宽、带宽不能无限止地换取功率。                                                                                              香农信道容量定理              信道分类 多径扩散 相干带宽 多普勒扩散 相干时间 色散信道（信号带宽大于多径扩散） 非">
@@ -180,7 +198,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#绪论"><span class="post-toc-number">1.</span> <span class="post-toc-text">绪论</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#香农信道容量定理及其应用"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">香农信道容量定理及其应用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信道分类"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">信道分类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#21世纪通信的二大平台"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">21世纪通信的二大平台</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统组成"><span class="post-toc-number">2.</span> <span class="post-toc-text">系统组成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#无线通信系统的组成"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">无线通信系统的组成</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基带、中频、射频、天线单元的组成"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">基带、中频、射频、天线单元的组成</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#传输容量表示法、传输质量表示法"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">传输容量表示法、传输质量表示法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#误码门限和哪些因素有关？"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">误码门限和哪些因素有关？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#双工方式、调制方式、解调方式、信道编码方式、信源编码方式举例"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">双工方式、调制方式、解调方式、信道编码方式、信源编码方式举例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#无线通信系统的有效性和可靠性如何提高。"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">无线通信系统的有效性和可靠性如何提高。</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信道"><span class="post-toc-number">3.</span> <span class="post-toc-text">信道</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#无线传播信道的主要指标。"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">无线传播信道的主要指标。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自由空间传播"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">自由空间传播</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视距传播含义。视距传播除考虑自由空间传播外，还要考虑什么效应？"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">视距传播含义。视距传播除考虑自由空间传播外，还要考虑什么效应？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#平衰落、频率选择性衰落"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">平衰落、频率选择性衰落</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动传播的特点"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">移动传播的特点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动传播大尺度模型和小尺度模型的含义"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">移动传播大尺度模型和小尺度模型的含义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动传播的对数路径衰减规律的含义-路径衰减指数的含义"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">移动传播的对数路径衰减规律的含义, 路径衰减指数的含义</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#蜂窝"><span class="post-toc-number">4.</span> <span class="post-toc-text">蜂窝</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重要数量值"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">重要数量值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#区群"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">区群</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#区群大小"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">区群大小</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同频小区"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">同频小区</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#同频小区的确定"><span class="post-toc-number">4.3.1.</span> <span class="post-toc-text">同频小区的确定</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相邻小区的中心距"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">相邻小区的中心距</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信道分配"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">信道分配</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#固定信道分配"><span class="post-toc-number">4.5.1.</span> <span class="post-toc-text">固定信道分配</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#绪论"><span class="post-toc-number">1.</span> <span class="post-toc-text">绪论</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#香农信道容量定理及其应用"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">香农信道容量定理及其应用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信道分类"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">信道分类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#21世纪通信的二大平台"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">21世纪通信的二大平台</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统组成"><span class="post-toc-number">2.</span> <span class="post-toc-text">系统组成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#无线通信系统的组成"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">无线通信系统的组成</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基带、中频、射频、天线单元的组成"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">基带、中频、射频、天线单元的组成</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#传输容量表示法、传输质量表示法"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">传输容量表示法、传输质量表示法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#误码门限和哪些因素有关？"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">误码门限和哪些因素有关？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#双工方式、调制方式、解调方式、信道编码方式、信源编码方式举例"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">双工方式、调制方式、解调方式、信道编码方式、信源编码方式举例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#无线通信系统的有效性和可靠性如何提高。"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">无线通信系统的有效性和可靠性如何提高。</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信道"><span class="post-toc-number">3.</span> <span class="post-toc-text">信道</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#无线传播信道的主要指标。"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">无线传播信道的主要指标。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自由空间传播"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">自由空间传播</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视距传播含义。视距传播除考虑自由空间传播外，还要考虑什么效应？"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">视距传播含义。视距传播除考虑自由空间传播外，还要考虑什么效应？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#平衰落、频率选择性衰落"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">平衰落、频率选择性衰落</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动传播的特点"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">移动传播的特点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动传播大尺度模型和小尺度模型的含义"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">移动传播大尺度模型和小尺度模型的含义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动传播的对数路径衰减规律的含义-路径衰减指数的含义"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">移动传播的对数路径衰减规律的含义, 路径衰减指数的含义</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#蜂窝"><span class="post-toc-number">4.</span> <span class="post-toc-text">蜂窝</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重要数量值"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">重要数量值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#区群"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">区群</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#区群大小"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">区群大小</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同频小区"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">同频小区</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#同频小区的确定"><span class="post-toc-number">4.3.1.</span> <span class="post-toc-text">同频小区的确定</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相邻小区的中心距"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">相邻小区的中心距</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信道分配"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">信道分配</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#固定信道分配"><span class="post-toc-number">4.5.1.</span> <span class="post-toc-text">固定信道分配</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#动态信道分配"><span class="post-toc-number">4.5.2.</span> <span class="post-toc-text">动态信道分配</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#切换"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">切换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#硬切换和软切换"><span class="post-toc-number">4.6.1.</span> <span class="post-toc-text">硬切换和软切换</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#干扰和系统容量"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">干扰和系统容量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#同频干扰"><span class="post-toc-number">4.7.1.</span> <span class="post-toc-text">同频干扰</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同频复用比例"><span class="post-toc-number">4.8.</span> <span class="post-toc-text">同频复用比例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#中继理论"><span class="post-toc-number">4.9.</span> <span class="post-toc-text">中继理论</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#服务等级GOS"><span class="post-toc-number">4.9.1.</span> <span class="post-toc-text">服务等级GOS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#中继效率"><span class="post-toc-number">4.9.2.</span> <span class="post-toc-text">中继效率</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#大尺度路径损耗"><span class="post-toc-number">5.</span> <span class="post-toc-text">大尺度路径损耗</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信号强度的度量"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">信号强度的度量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#dB重要数值"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">dB重要数值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#天线概述"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">天线概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LOS极限距离"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">LOS极限距离</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#非视距传播的三种基本传播机制"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">非视距传播的三种基本传播机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#反射"><span class="post-toc-number">5.5.1.</span> <span class="post-toc-text">反射</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#菲涅尔带域"><span class="post-toc-number">5.5.2.</span> <span class="post-toc-text">菲涅尔带域</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#计算绕射损耗"><span class="post-toc-number">5.5.2.1.</span> <span class="post-toc-text">计算绕射损耗</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#路径损耗指数n"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">路径损耗指数n</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对数距离路径损耗模型"><span class="post-toc-number">5.6.1.</span> <span class="post-toc-text">对数距离路径损耗模型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#阴影衰落"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">阴影衰落</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对数正态阴影模型"><span class="post-toc-number">5.7.1.</span> <span class="post-toc-text">对数正态阴影模型</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#小尺度路径损耗"><span class="post-toc-number">6.</span> <span class="post-toc-text">小尺度路径损耗</span></a></li></ol>
         </nav>
     </aside>
 
@@ -453,8 +471,14 @@
 <p>n*log(d)</p>
 <p>n为路径衰减指数。</p>
 <h1 id="蜂窝"><a href="#蜂窝" class="headerlink" title="蜂窝"></a>蜂窝</h1><p>核心思想：频率复用</p>
+<p>本章重点：</p>
+<ul>
+<li>区群，区群大小，同频小区的确定，同频复用距离D。</li>
+<li>切换，切换的策略，硬切换，软切换。</li>
+<li>干扰的类型，同频干扰。</li>
+<li>中继理论及其有关计算。</li>
+</ul>
 <h2 id="重要数量值"><a href="#重要数量值" class="headerlink" title="重要数量值"></a>重要数量值</h2><p>对于AMPS系统，接收机可以允许的有用信号和同频干扰信号的功率比一般要大于18dB。即， 有用信号功率≥63＊同频干扰功率。 因此，这就为AMPS系统（FDMA的蜂窝系统）的设计做出了基本的限定。</p>
-<p>    区群，区群大小，同频小区的确定，同频复用距离D。<br>    切换，切换的策略，硬切换，软切换。<br>    干扰的类型，同频干扰。<br>    中继理论及其有关计算。</p>
 <h2 id="区群"><a href="#区群" class="headerlink" title="区群"></a>区群</h2><p><strong>区群</strong>（cluster，也译作簇）</p>
 <ul>
 <li>对于蜂窝系统，系统所提供的全部频率资源将在若干个相互邻接的小区上予以分配，分配的基本原则是每个小区将获得彼此不同的一部分频率资源，一般可以考虑 平均分配。我们将上述这些相邻接的一组小区称作一个区群。换句话说，<strong>在一个区群内部是不进行频率复用的</strong>。</li>
@@ -506,6 +530,275 @@
             </figure>
 <h2 id="信道分配"><a href="#信道分配" class="headerlink" title="信道分配"></a>信道分配</h2><p><strong>信道分配</strong>指的是蜂窝系统如何将可用信道资源在区群范围内进行分配， 以减小干扰并保证足够的用户容量。</p>
 <h3 id="固定信道分配"><a href="#固定信道分配" class="headerlink" title="固定信道分配"></a>固定信道分配</h3><p>系统拥有的信道资源（如载频或频道） 采用某种方式进行划分以后，各信道组被固定地分配到区群内各个小区上去。 一旦分配完毕，一般情况下，各小区只固定使用分配到本小区的那组信道。若小区内暂时没有空闲信道，呼叫将被阻塞（到达用户的呼叫无法接通或用户发起的呼叫无法拨出）。</p>
+<p>可能造成频率资源的浪费。</p>
+<p>如何划分信道组？ </p>
+<ul>
+<li>邻频干扰和远近效应</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/wireless_communications_notes/lecture_4/interfere.png" alt="远近效应" title="">
+                </div>
+                <div class="image-caption">远近效应</div>
+            </figure>
+<ul>
+<li><p>邻道干扰产生的原因</p>
+<ul>
+<li>已调信号带外衰减不够快——采用带宽效率更高的调制技术</li>
+<li>接收滤波器不够理想——改进接收滤波器性能</li>
+</ul>
+</li>
+<li><p>无线移动通信对约束邻频干扰的要求</p>
+<ul>
+<li>发射频谱的主瓣 应比旁瓣高60-70dB</li>
+</ul>
+</li>
+</ul>
+<h3 id="动态信道分配"><a href="#动态信道分配" class="headerlink" title="动态信道分配"></a>动态信道分配</h3><p>信道不是固定地分配给每个小区，而是全部信道形成“信道池”，由MSC统一管理。 呼叫发生时由BS向MSC申请信道。<br>注意：MSC既是交换中心，又负责信道管理，更重要的是它还进行移动性管理（如切换管理）。</p>
+<ul>
+<li><p>动态信道分配考虑的因素 </p>
+<ul>
+<li>同频道复用距离</li>
+<li>不会对本小区已经使用的其他频率产生明显干扰</li>
+<li>以后呼叫阻塞的可能性，候选频道使用的频次</li>
+</ul>
+</li>
+<li><p>优点</p>
+<ul>
+<li>频率利用率高，可适应业务分布的动态变化。</li>
+<li>降低了呼叫阻塞的概率，增加了系统的用户容量</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>控制复杂，开销较大（要求MSC 增加存储量和运算量）</li>
+</ul>
+</li>
+</ul>
+<h2 id="切换"><a href="#切换" class="headerlink" title="切换"></a>切换</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/wireless_communications_notes/lecture_4/switch.png" alt="过区切换" title="">
+                </div>
+                <div class="image-caption">过区切换</div>
+            </figure>
+<ul>
+<li>切换的依据<ul>
+<li>接收信号强度(RSS，Received Signal Strength)</li>
+<li>信干比S/I或载干比C/I（C_Carrier)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>传统的切换启动准则 <ul>
+<li>相对信号强度准则</li>
+<li>具有门限规定的相对信号强度准则 </li>
+<li>具有滞后余量的相对信号强度准则 </li>
+<li>具有滞后余量和门限规定的相对信号强度准则（GSM采用）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>门限规定：设定接收信号强度门限，若当前小区的接收信号强度低于门限，并且移动台接收到了比当前小区信号更强的相邻小区信号则启动切换。<br>滞后余量：相邻小区的平均接收信号强度大于当前小区的平均接收信号强度，并且超过的数值大于一个滞后余量时才启动切换。避免来回切换的“乒乓效应”。</p>
+</blockquote>
+<h3 id="硬切换和软切换"><a href="#硬切换和软切换" class="headerlink" title="硬切换和软切换"></a>硬切换和软切换</h3><p>硬切换和软切换类型的区分是基于具体实施切换时对新、旧链路的不同处理方式的。 </p>
+<ul>
+<li>硬切换采用“先断(旧), 后建(新)” 的方式。<ul>
+<li>1G的FDMA系统和2G的TDMA系统采用。 </li>
+</ul>
+</li>
+<li><p>软切换采用“先建(新), 综合利用(新\旧), 后断(旧)”的方式。</p>
+<ul>
+<li>2G和3G的CDMA系统广泛采用。</li>
+</ul>
+</li>
+<li><p>之所以存在上述差别，是因为CDMA相邻基站可以采用相同载频，所以同时保持新旧链路是可以做到的。像FDMA这样的系统，相邻小区绝不能使用相同载频，而移动台一般不能够同时工作在两个不同载频上。</p>
+</li>
+</ul>
+<h2 id="干扰和系统容量"><a href="#干扰和系统容量" class="headerlink" title="干扰和系统容量"></a>干扰和系统容量</h2><ul>
+<li>干扰的类型<ul>
+<li>同频干扰</li>
+<li>邻频干扰</li>
+<li>互调干扰</li>
+<li>其他的外界干扰和噪声</li>
+</ul>
+</li>
+<li>其中同频干扰，邻频干扰和互调干扰的影响最大，且无法根除</li>
+</ul>
+<h3 id="同频干扰"><a href="#同频干扰" class="headerlink" title="同频干扰"></a>同频干扰</h3><blockquote>
+<p>就蜂窝系统而言，最重要的干扰来自于系统本身，也就是同频干扰。同频干扰即由于频率的复用，系统中存在同频小区，它们相互之间存在着无法滤除的干扰。<br>同频干扰是不能简单地通过增加发射功率来克服的！</p>
+</blockquote>
+<h2 id="同频复用比例"><a href="#同频复用比例" class="headerlink" title="同频复用比例"></a>同频复用比例</h2><p>$Q=\frac{D}{R}=\sqrt{3N}$</p>
+<blockquote>
+<p>由对数距离路径损耗模型可知同频干扰随着同 频复用距离（或同频复用比例）的增大而减小， 反之亦然。</p>
+</blockquote>
+<h2 id="中继理论"><a href="#中继理论" class="headerlink" title="中继理论"></a>中继理论</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/wireless_communications_notes/lecture_4/erlang.png" alt="话务量" title="">
+                </div>
+                <div class="image-caption">话务量</div>
+            </figure>
+<h3 id="服务等级GOS"><a href="#服务等级GOS" class="headerlink" title="服务等级GOS"></a>服务等级GOS</h3><ul>
+<li>服务等级用来表示在中继系统最忙的时间用户进入系统的能力。</li>
+<li>在具有特定数量的可用信道的系统中，通过定义希望用户能够获得信道从而接入系统的概率，可以把服务等级作为某个中继无线系统的预定性能基准。</li>
+<li><p>GOS通常定义为呼叫阻塞的概率，或是呼叫延迟大于某一特定排队时间的概率。</p>
+</li>
+<li><p>阻塞处理</p>
+<ul>
+<li>清除</li>
+<li>延时</li>
+</ul>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/wireless_communications_notes/lecture_4/erlang_b.png" alt="呼损概率公式" title="">
+                </div>
+                <div class="image-caption">呼损概率公式</div>
+            </figure>
+<h3 id="中继效率"><a href="#中继效率" class="headerlink" title="中继效率"></a>中继效率</h3><p>$\eta = \frac{A(1-GOS))}{C} (Erlangs/ch)$</p>
+<h1 id="大尺度路径损耗"><a href="#大尺度路径损耗" class="headerlink" title="大尺度路径损耗"></a>大尺度路径损耗</h1><p>本章重点：</p>
+<blockquote>
+<p>自由空间传播<br>了解非视距传播的三种机制：反射、绕射和散射<br>对数路径损耗模型和对数阴影模型</p>
+<h2 id="信号强度的度量"><a href="#信号强度的度量" class="headerlink" title="信号强度的度量"></a>信号强度的度量</h2></blockquote>
+<p>功率(dBm)=10lg(功率(mW)/1mW)<br>电平(dBμV)=20lg(电平(μV)／1 μV)</p>
+<h2 id="dB重要数值"><a href="#dB重要数值" class="headerlink" title="dB重要数值"></a>dB重要数值</h2><ul>
+<li>3dB的概念<ul>
+<li>功率每增加一倍，其分贝值增大3dB</li>
+<li>功率每减小一半，其分贝值减少3dB</li>
+</ul>
+</li>
+<li>1dB的概念<ul>
+<li>功率每增加25%，其分贝值增大约1dB</li>
+<li>功率每减小20%, 其分贝值减少约1dB</li>
+</ul>
+</li>
+</ul>
+<h2 id="天线概述"><a href="#天线概述" class="headerlink" title="天线概述"></a>天线概述</h2><ul>
+<li>理想化各向同性天线(点源)<ul>
+<li>没有体积、不存在损耗的点源辐射器。方向图为球体，即在空间各个方向具有相同的辐射强度(无方向性)</li>
+<li>$S=\frac{P}{4\pi r^2}$  S是功率密度</li>
+</ul>
+</li>
+<li>方向性天线</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/wireless_communications_notes/lecture_5/aerial.png" alt="波瓣图" title="">
+                </div>
+                <div class="image-caption">波瓣图</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/wireless_communications_notes/lecture_5/aerial2.png" alt="天线的增益" title="">
+                </div>
+                <div class="image-caption">天线的增益</div>
+            </figure>
+<p>工程应用上，常把$P_{t}G$称作等效各向同性辐射功率(Effective Isotropically Radiated Power), 简记作EIRP</p>
+<p>此时, G(dB)=10lgG. </p>
+<p>为明确起见，采用dBi标记这个分贝值。i：isotropical。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/wireless_communications_notes/lecture_5/area.png" alt="天线的有效面积" title="">
+                </div>
+                <div class="image-caption">天线的有效面积</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/wireless_communications_notes/lecture_5/E_H.png" alt="接收场强和功率与距离的关系" title="">
+                </div>
+                <div class="image-caption">接收场强和功率与距离的关系</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/wireless_communications_notes/lecture_5/aerial3.png" alt="接收天线获得的功率" title="">
+                </div>
+                <div class="image-caption">接收天线获得的功率</div>
+            </figure>
+<ul>
+<li>自由空间传播损耗<br>可以认为$P_R=P_T/PL$<br>PL(dB) = 32.44+20lg d(km)+20lg f(MHz)</li>
+</ul>
+<h2 id="LOS极限距离"><a href="#LOS极限距离" class="headerlink" title="LOS极限距离"></a>LOS极限距离</h2><p>$d=4.12(\sqrt{h_t}+\sqrt{h_r})$</p>
+<h2 id="非视距传播的三种基本传播机制"><a href="#非视距传播的三种基本传播机制" class="headerlink" title="非视距传播的三种基本传播机制"></a>非视距传播的三种基本传播机制</h2><ul>
+<li>反射<ul>
+<li>当电波所投射到的表面尺寸远大于电波波长，并且该表面比较光滑，将发生电波的反射。</li>
+</ul>
+</li>
+<li>绕射<ul>
+<li>当电波传播过程中遇到与电波波长具有可比性的阻挡物时，电波会绕过阻挡物而传播到它的背面去。</li>
+</ul>
+</li>
+<li>散射<ul>
+<li>当波穿行的介质中存在小于波长的物体并且单位体积内阻挡体的个数非常巨大，将发生散射。可以理解为“乱”反射。</li>
+</ul>
+</li>
+</ul>
+<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><p><img src="/img/wireless_communications_notes/lecture_5/double_aerial.png" alt="存在地面反射的双线模型"></p>
+<p>双线模型下：<br>$P_r=P_t\frac{G_tG_rh_t^2h_r^2}{d^4}$</p>
+<p>由于直射波场强和反射波场强的共同作用下，随着距离(d)的延伸，接收功率按距离的四次方衰减。</p>
+<p><img src="/img/wireless_communications_notes/lecture_5/summary.png" alt="小结"></p>
+<h3 id="菲涅尔带域"><a href="#菲涅尔带域" class="headerlink" title="菲涅尔带域"></a>菲涅尔带域</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/wireless_communications_notes/lecture_5/fresnel.png" alt="求附加路径长度" title="">
+                </div>
+                <div class="image-caption">求附加路径长度</div>
+            </figure>
+<p>求得$\Delta=\frac{h^2}{2}\frac{d}{d_1d_2}$</p>
+<p>第n菲涅尔区的半径是 $r_n=h=\sqrt{\frac{n\lambda d_1d_2}{d}}$</p>
+<p>第一菲涅尔带域：n＝1时对应的圆面称作第一菲涅尔带域.<br>$r_1=\sqrt{\frac{\lambda d_1d_2}{d}}$</p>
+<p>当d<em>{1}=d</em>{2}=\frac{d}{2}$</p>
+<p>有</p>
+<p><a href="https://www.codecogs.com/eqnedit.php?latex=r_{1max}=\frac{1}{2}\sqrt{\lambda&space;d}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?r_{1max}=\frac{1}{2}\sqrt{\lambda&space;d}" title="r_{1max}=\frac{1}{2}\sqrt{\lambda d}"></a></p>
+<p>要在接收端Rx处达到自由空间的场强，不一定需要许多的菲涅尔区，也不一定需要全部的第一菲涅尔区，只要第一菲涅尔区截面积的1/3就可以获得自由空间场强。这样最小菲涅尔半径为$r_0=\frac{1}{\sqrt{3}}r_1=0.577r_1$</p>
+<p>要保证电波的有效传播（获得与自由空间相当的接收场强），在这个最小菲涅尔椭球的范围内应该不存在阻挡物， 否则将造成严重衰减。这个衰减就是由阻挡引起的绕射衰减.</p>
+<h4 id="计算绕射损耗"><a href="#计算绕射损耗" class="headerlink" title="计算绕射损耗"></a>计算绕射损耗</h4><p>不会……<br>假装考试不考</p>
+<h2 id="路径损耗指数n"><a href="#路径损耗指数n" class="headerlink" title="路径损耗指数n"></a>路径损耗指数n</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/wireless_communications_notes/lecture_5/exp.png" alt="路径损耗指数" title="">
+                </div>
+                <div class="image-caption">路径损耗指数</div>
+            </figure>
+<h3 id="对数距离路径损耗模型"><a href="#对数距离路径损耗模型" class="headerlink" title="对数距离路径损耗模型"></a>对数距离路径损耗模型</h3><p><img src="https://latex.codecogs.com/gif.latex?%5Coverline%7BPL%7D%28d%29_%7BdB%7D%3D%5Coverline%7BPL%7D%28d_0%29_%7BdB%7D&plus;10nlg%28%5Cfrac%7Bd%7D%7Bd_0%7D%29%2Cd%3Ed_0" alt="对数距离路径损耗模型公式"></p>
+<h2 id="阴影衰落"><a href="#阴影衰落" class="headerlink" title="阴影衰落"></a>阴影衰落</h2><p>信号在无线信道传播过程中遇到的障碍物会使信号发生随机变化，从而造成给定距离处接收信号功率的随机变化，反射面和散射体的变化也会造成接收功率的随机变化。因此，需要建立一个模型来描述这些因素造成的信号随机衰减。我们将主要由障碍物的阻挡（如建筑物会形成电波传播的阴影）所造成的这种信号的随机变化称为<strong>阴影衰落</strong>(Shadowing)。</p>
+<h3 id="对数正态阴影模型"><a href="#对数正态阴影模型" class="headerlink" title="对数正态阴影模型"></a>对数正态阴影模型</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://latex.codecogs.com/gif.latex?PL%28d%29%5BdB%5D%3D%5Coverline%7BPL%7D%28d%29%5BdB%5D&plus;X_%7B%5Csigma%7D%5BdB%5D%3D%5Coverline%7BPL%7D%28d_0%29%5BdB%5D&plus;10nlg%28%5Cfrac%7Bd%7D%7Bd_0%7D%29&plus;X_%7B%5Csigma%7D%5BdB%5D%2C%20d%3Ed_0" alt="对数正态阴影模型公式" title="">
+                </div>
+                <div class="image-caption">对数正态阴影模型公式</div>
+            </figure>
+<p>X是均值为0dB的正态随机变量。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/wireless_communications_notes/lecture_5/receive.png" alt="平均接收功率" title="">
+                </div>
+                <div class="image-caption">平均接收功率</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/wireless_communications_notes/lecture_5/outage.png" alt="中断概率" title="">
+                </div>
+                <div class="image-caption">中断概率</div>
+            </figure>
+<h1 id="小尺度路径损耗"><a href="#小尺度路径损耗" class="headerlink" title="小尺度路径损耗"></a>小尺度路径损耗</h1><p>本章重点：</p>
+<ul>
+<li>多径信道冲激响应模型</li>
+<li>多径信道的参数及小尺度衰落的类型</li>
+<li>基于多径时延的小尺度衰落的分类</li>
+<li>基于多普勒扩展的小尺度衰落的分类</li>
+<li>熟悉本章的习题</li>
+</ul>
 
         </div>
 
@@ -514,7 +807,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-07-06T03:21:16.000Z" itemprop="dateUpdated">2019-07-06 11:21:16</time>
+    Last updated: <time datetime="2019-07-06T14:50:06.000Z" itemprop="dateUpdated">2019-07-06 22:50:06</time>
 </span><br>
 
 
