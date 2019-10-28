@@ -1,10 +1,11 @@
 ---
 title: I can't accept my mediocrity
 comments: true
-date: 2019-10-28 13:34:19
 categories: Diary
 tags:
   - reflection
+abbrlink: ffd08d43
+date: 2019-10-28 13:34:19
 ---
 
 # I Can't Accepty My Mediocrity
