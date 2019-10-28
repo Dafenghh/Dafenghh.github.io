@@ -8,7 +8,6 @@ abbrlink: ffd08d43
 date: 2019-10-28 13:34:19
 ---
 
-# I Can't Accepty My Mediocrity
 
 I ever had a big dream. 
 
