@@ -25,3 +25,4 @@ It’s so disappointing. I abandoned my OI dream and also lost the chance to get
 
 I also dreamt to get into Hongkong University. But looking back now, these are simply a dream. My actions can not be commensurate with the big dreams.
 
+**to be continued**
