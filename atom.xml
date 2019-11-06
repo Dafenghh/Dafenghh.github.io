@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dafenghh.github.io/"/>
-  <updated>2019-10-28T07:02:30.000Z</updated>
+  <updated>2019-11-06T13:24:52.000Z</updated>
   <id>http://dafenghh.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Preparation for IELTS speaking</title>
+    <link href="http://dafenghh.github.io/post/2884b082.html"/>
+    <id>http://dafenghh.github.io/post/2884b082.html</id>
+    <published>2019-11-06T12:36:37.000Z</published>
+    <updated>2019-11-06T13:24:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="口语话题准备步骤"><a href="#口语话题准备步骤" class="headerlink" title="口语话题准备步骤"></a>口语话题准备步骤</h1><p>口语每天都要练。<br>每天练习2-3个P1话题，1-2个P2话题。</p><ol><li>通读题目，熟悉话题</li><li><strong>逐字稿</strong>——思路、语法、词汇</li><li>朗读→跟读→矫正发音 (1st round)</li><li><strong>关键词</strong>——自然记忆 (2nd round)</li><li><strong>录音</strong>——反思 (3rd round)</li></ol><h1 id="雅思口语评分标准"><a href="#雅思口语评分标准" class="headerlink" title="雅思口语评分标准"></a>雅思口语评分标准</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/img/English/IELTS_speaking_band_descriptors.jpg" alt="雅思考试口语评分标准" title="">                </div>                <div class="image-caption">雅思考试口语评分标准</div>            </figure><h2 id="Fluency-and-coherence"><a href="#Fluency-and-coherence" class="headerlink" title="Fluency and coherence"></a>Fluency and coherence</h2><ul><li>Fluency<ol><li>Speed <ul><li>Natural:<ul><li>Speaks not too slow or too fast</li></ul></li><li>But think fast! </li></ul></li><li>Continuity  —- keep talking<ul><li>Topic development</li><li>Repetition and Self-correction</li><li>Hesitation(content-related/language-related) </li></ul></li></ol></li><li>Coherence<ul><li>a flexible and appropriate use of <strong>discourse markers</strong> and <strong>connectives</strong></li></ul></li></ul><p>总结：</p><ul><li>Speed 语速适中，反应自然</li><li>Continuity 流畅连续，持续输出</li><li>Coherence 逻辑通顺，衔接恰当</li></ul><h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><p><strong>Record yourself!</strong></p><h2 id="Lexical-resource"><a href="#Lexical-resource" class="headerlink" title="Lexical resource"></a>Lexical resource</h2><ul><li>替换简单词，扩充常用词</li><li>用词地道，准确释义</li><li>慎用俗语</li></ul><p>忌：反复用相同小词，盲目查字典，使用生僻词，乱用俗语。<br>关注：英文释义，单词例句（使用场景），同反义词。</p><h2 id="Grammatical-range-and-accuracy"><a href="#Grammatical-range-and-accuracy" class="headerlink" title="Grammatical range and accuracy"></a>Grammatical range and accuracy</h2><p>Accuracy: 基础语法准确使用<br>Range: 句式灵活，尝试使用复杂句 (complex structure)</p><h2 id="Pronunciation"><a href="#Pronunciation" class="headerlink" title="Pronunciation"></a>Pronunciation</h2><p>Word: 元辅音发音、重读音节<br>Setence: 连读、弱化、句子音调</p><p>发音练习：模仿跟读剑桥雅思听力原文。</p><p>Todo: 整理官方评分标准与示例视频：<br><a href="https://www.chinaielts.org/guide/band_descriptors_speaking.shtml" target="_blank" rel="noopener">https://www.chinaielts.org/guide/band_descriptors_speaking.shtml</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;口语话题准备步骤&quot;&gt;&lt;a href=&quot;#口语话题准备步骤&quot; class=&quot;headerlink&quot; title=&quot;口语话题准备步骤&quot;&gt;&lt;/a&gt;口语话题准备步骤&lt;/h1&gt;&lt;p&gt;口语每天都要练。&lt;br&gt;每天练习2-3个P1话题，1-2个P2话题。&lt;/p&gt;
+&lt;ol&gt;
+&lt;l
+      
+    
+    </summary>
+    
+      <category term="English" scheme="http://dafenghh.github.io/categories/English/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>I can&#39;t accept my mediocrity</title>
@@ -1256,11 +1281,11 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="反转" scheme="http://dafenghh.github.io/tags/%E5%8F%8D%E8%BD%AC/"/>
-    
       <category term="brute force" scheme="http://dafenghh.github.io/tags/brute-force/"/>
     
       <category term="位运算" scheme="http://dafenghh.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+      <category term="反转" scheme="http://dafenghh.github.io/tags/%E5%8F%8D%E8%BD%AC/"/>
     
   </entry>
   
@@ -1425,9 +1450,9 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="区间处理" scheme="http://dafenghh.github.io/tags/%E5%8C%BA%E9%97%B4%E5%A4%84%E7%90%86/"/>
-    
       <category term="反转" scheme="http://dafenghh.github.io/tags/%E5%8F%8D%E8%BD%AC/"/>
+    
+      <category term="区间处理" scheme="http://dafenghh.github.io/tags/%E5%8C%BA%E9%97%B4%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
@@ -1474,9 +1499,9 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="math" scheme="http://dafenghh.github.io/tags/math/"/>
-    
       <category term="binary search" scheme="http://dafenghh.github.io/tags/binary-search/"/>
+    
+      <category term="math" scheme="http://dafenghh.github.io/tags/math/"/>
     
   </entry>
   
@@ -1574,9 +1599,9 @@
       <category term="ACM" scheme="http://dafenghh.github.io/categories/ACM/"/>
     
     
-      <category term="graphs" scheme="http://dafenghh.github.io/tags/graphs/"/>
-    
       <category term="binary search" scheme="http://dafenghh.github.io/tags/binary-search/"/>
+    
+      <category term="graphs" scheme="http://dafenghh.github.io/tags/graphs/"/>
     
   </entry>
   
